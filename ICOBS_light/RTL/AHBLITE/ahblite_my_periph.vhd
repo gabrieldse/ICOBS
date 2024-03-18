@@ -18,6 +18,11 @@ port (
 
 	HSEL        : in  std_logic;
 	HREADY      : in  std_logic;
+	
+	--7seg diplay interface
+	seg         : out std_logic_vector(0 to 6);
+	an          : out std_logic_vector(3 downto 0);
+	dp          : out std_logic;
 
 	-- AHB-Lite interface
 	AHBLITE_IN  : in  AHBLite_master_vector;
@@ -26,6 +31,17 @@ end;
 
 ----------------------------------------------------------------
 architecture arch of ahblite_my_periph is
+component seg_top is
+    Port ( mclk : in std_logic;
+            rst : in std_logic;
+            E1 : in std_logic_vector (3 downto 0);
+            E2 : in std_logic_vector (3 downto 0);
+            E3 : in std_logic_vector (3 downto 0);
+            E4 : in std_logic_vector (3 downto 0);
+            seg: out std_logic_vector(0 to 6);
+            an : out std_logic_vector(3 downto 0);
+            dp : out std_logic);
+end component;
 
 	signal transfer : std_logic;
 	signal invalid  : std_logic;
@@ -46,9 +62,27 @@ architecture arch of ahblite_my_periph is
 
 	signal Reg1    : std_logic_vector(31 downto 0);
 	signal Reg2    : std_logic_vector(31 downto 0);
+	signal Reg3    : std_logic_vector(31 downto 0);
+	signal Reg4    : std_logic_vector(31 downto 0);
+	
+	-- signal for the reset as the reset of the peripheral is inverted
+	signal RST: std_logic;
 
 ----------------------------------------------------------------
 begin
+
+U_SEG_CTRL: seg_top
+    Port map(
+        mclk => HCLK,
+        rst => RST,
+        E1 => Reg1(3 downto 0),
+        E2 => Reg2(3 downto 0),
+        E3 => Reg3(3 downto 0),
+        E4 => Reg4(3 downto 0),
+        seg => seg,
+        an => an,
+        dp => dp);
+RST <= not HRESETn;
 
 	AHBLITE_OUT <= to_vector(SlaveOut);
 	SlaveIn <= to_record(AHBLITE_IN);
@@ -73,6 +107,8 @@ begin
 			-- Reset values
 			Reg1 <= (others => '0');
 			Reg2 <= (others => '0');
+			Reg3 <= (others => '0');
+			Reg4 <= (others => '0');
 
 		--------------------------------
 		elsif rising_edge(HCLK) then
@@ -85,6 +121,8 @@ begin
 				case lastaddr is
 					when x"00" => Reg1    <= SlaveIn.HWDATA;
 					when x"01" => Reg2    <= SlaveIn.HWDATA;
+					when x"02" => Reg3    <= SlaveIn.HWDATA;
+					when x"03" => Reg4    <= SlaveIn.HWDATA;
 					when others =>
 				end case;
 			end if;
@@ -97,6 +135,8 @@ begin
 					case address is
 						when x"00" => SlaveOut.HRDATA    <= Reg1;
 						when x"01" => SlaveOut.HRDATA    <= Reg2;
+						when x"02" => SlaveOut.HRDATA    <= Reg3;
+						when x"03" => SlaveOut.HRDATA    <= Reg4;
 						when others =>
 					end case;
 				end if;

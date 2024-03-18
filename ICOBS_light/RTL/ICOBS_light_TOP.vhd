@@ -38,7 +38,12 @@ entity ICOBS_light_TOP is
 		IOPC            : inout std_logic_vector(IOPC_LEN-1 downto 0);
 
 		UART_RX			: in  std_logic;
-		UART_TX			: out std_logic);
+		UART_TX			: out std_logic;
+		
+		--7seg diplay interface
+        seg         : out std_logic_vector(0 to 6);
+        an          : out std_logic_vector(3 downto 0);
+        dp          : out std_logic);
     end;
 
 ----------------------------------------------------------------

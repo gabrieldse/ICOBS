@@ -42,6 +42,11 @@ entity mcu_peripherals is port (
 	-- Slave interface to connect PERIPH master
 	periph_slvi_vec   		: in  MTS_vector;
 	periph_slvo_vec   		: out STM_vector;
+	
+	--7seg diplay interface
+	seg         : out std_logic_vector(0 to 6);
+	an          : out std_logic_vector(3 downto 0);
+	dp          : out std_logic;
 
 	-- GPIO
 	IOPA_READ 				: in  std_logic_vector(IOPA_LEN-1 downto 0);
