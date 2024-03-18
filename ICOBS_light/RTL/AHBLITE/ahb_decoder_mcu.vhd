@@ -51,6 +51,8 @@ begin
 							when x"18" & "00" => sel <= CID_TIMER1;
 
 							when x"20" & "00" => sel <= CID_UART1;
+							
+							when x"22" & "00" => sel <= CID_MY_PERIPH;
 
 							when others => sel <= CID_DEFAULT;
 						end case;

@@ -186,6 +186,19 @@ architecture arch of mcu_peripherals is
 		TXD_DOUT    : out std_logic;
 		TXD_TRIS    : out std_logic);
 	end component;
+	
+	component ahblite_my_periph
+	port (
+		HRESETn     : in  std_logic;
+		HCLK        : in  std_logic;
+
+		HSEL        : in  std_logic;
+		HREADY      : in  std_logic;
+
+		-- AHB-Lite interface
+		AHBLITE_IN  : in  AHBLite_master_vector;
+		AHBLITE_OUT : out AHBLite_slave_vector);
+	end component;
 
 	-- Reset
 	signal HRESETn   : std_logic;
@@ -382,5 +395,16 @@ begin
 	IRQ_FAST(3 downto 1) <= (others => '0');
 	IRQ_FAST(11 downto 5) <= (others => '0');
 	IRQ_FAST(14 downto 13) <= (others => '0');
+	
+	U_MY_PERIPH: ahblite_my_periph
+	port map (
+		HRESETn     => HRESETn,
+		HCLK        => HCLK,
+
+		HSEL        => HSEL(CID_ENUM'pos(CID_MY_PERIPH)), -- returns the position of CID_MY_PERIPH in the enumeration CID_ENUM.
+		HREADY      => MasterIn.HREADYOUT,
+		
+		AHBLITE_IN  => BusMasterOut,
+		AHBLITE_OUT => BusSlaveArray(CID_ENUM'pos(CID_MY_PERIPH)));
 
 end;

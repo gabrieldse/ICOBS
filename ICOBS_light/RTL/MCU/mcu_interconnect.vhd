@@ -77,12 +77,12 @@ architecture behv of mcu_interconnect is
 
 begin
 
-    slv_addr_b(0) <=    x"08000000"; --port 1 -> ROM0 -> 0x0800 0000
-    slv_addr_b(1) <=    x"10000000"; --port 2 -> RAM1 -> 0x1000 0000
+    slv_addr_b(0) <=    x"08000000"; --port 1 -> ROM0 -> 0x0800 0000 #8,388,608 bytes ou 8,338 mB
+    slv_addr_b(1) <=    x"10000000"; --port 2 -> RAM1 -> 0x1000 0000 #
     slv_addr_b(2) <=    x"10010000"; --port 3 -> RAM2 -> 0x1001 0000
     slv_addr_b(3) <=    x"11000000"; --port 4 -> AHB-Lite BUS -> 0x1100 0000
 
-    slv_mask(0)   <=    x"00000FFF"; --port 1 -> ROM0 -> 0x1000
+    slv_mask(0)   <=    x"00000FFF"; --port 1 -> ROM0 -> 0x1000 #why this size ?
     slv_mask(1)   <=    x"0000FFFF"; --port 1 -> RAM1 -> 0x1 0000
     slv_mask(2)   <=    x"0000FFFF"; --port 2 -> RAM2 -> 0x1 0000
     slv_mask(3)   <=    x"00FFFFFF"; --port 3 -> AHB-Lite BUS

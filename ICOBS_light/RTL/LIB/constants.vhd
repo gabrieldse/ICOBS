@@ -42,7 +42,9 @@ package constants is
 
 		CID_TIMER1,
 
-		CID_UART1);
+		CID_UART1,
+		
+		CID_MY_PERIPH);
 
 	constant CID_MAX : integer := CID_ENUM'pos(CID_ENUM'right);
 
