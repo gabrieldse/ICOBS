@@ -76,7 +76,12 @@ architecture arch of ICOBS_light_TOP is
 		IOPC_TRIS 		: out std_logic_vector(IOPC_LEN-1 downto 0);
 
 		UART_RX			: in  std_logic;
-		UART_TX			: out std_logic);
+		UART_TX			: out std_logic;
+		
+		--7seg diplay interface
+        seg         : out std_logic_vector(0 to 6);
+        an          : out std_logic_vector(3 downto 0);
+        dp          : out std_logic);
     end component;
 
     component io_driver
@@ -146,7 +151,11 @@ begin
 		IOPC_TRIS 		=> IOPC_TRIS,
 
 		UART_RX			=> UART_RX,
-		UART_TX			=> UART_TX);
+		UART_TX			=> UART_TX,
+		
+			seg => seg,
+            an => an,
+            dp => dp);
 
     GPIOA: io_driver
 	generic map (IOPA_LEN)

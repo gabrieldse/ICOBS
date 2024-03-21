@@ -211,7 +211,11 @@ architecture arch of top_mcu is
 	    IOPC_TRIS 				: out std_logic_vector(IOPC_LEN-1 downto 0);
 
 		UART_RX					: in  std_logic;
-		UART_TX					: out std_logic);
+		UART_TX					: out std_logic;
+		
+		seg         : out std_logic_vector(0 to 6);
+	    an          : out std_logic_vector(3 downto 0);
+	    dp          : out std_logic);
 	end component;
 
 	-- Reset
@@ -345,7 +349,11 @@ begin
 			IOPC_TRIS 			=> IOPC_TRIS,
 
 			UART_RX				=> UART_RX,
-			UART_TX				=> UART_TX);
+			UART_TX				=> UART_TX,
+			
+			seg => seg,
+            an => an,
+            dp => dp);
 
 	rom0_adapter: obi_2_rom
 	port map (

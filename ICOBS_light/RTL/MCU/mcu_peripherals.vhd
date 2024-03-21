@@ -199,6 +199,11 @@ architecture arch of mcu_peripherals is
 
 		HSEL        : in  std_logic;
 		HREADY      : in  std_logic;
+		
+		--7seg diplay interface
+        seg         : out std_logic_vector(0 to 6);
+        an          : out std_logic_vector(3 downto 0);
+        dp          : out std_logic;
 
 		-- AHB-Lite interface
 		AHBLITE_IN  : in  AHBLite_master_vector;
@@ -408,6 +413,11 @@ begin
 
 		HSEL        => HSEL(CID_ENUM'pos(CID_MY_PERIPH)), -- returns the position of CID_MY_PERIPH in the enumeration CID_ENUM.
 		HREADY      => MasterIn.HREADYOUT,
+		
+        --7seg diplay interface
+        seg => seg,
+        an => an,
+        dp => dp,
 		
 		AHBLITE_IN  => BusMasterOut,
 		AHBLITE_OUT => BusSlaveArray(CID_ENUM'pos(CID_MY_PERIPH)));

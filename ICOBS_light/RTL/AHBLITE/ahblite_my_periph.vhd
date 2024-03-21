@@ -31,6 +31,7 @@ end;
 
 ----------------------------------------------------------------
 architecture arch of ahblite_my_periph is
+
 component seg_top is
     Port ( mclk : in std_logic;
             rst : in std_logic;
@@ -56,8 +57,10 @@ end component;
 	-- +--------+--------+---------------------------+
 	-- | OFFSET | NAME   | DESCRIPTION               |
 	-- +--------+--------+---------------------------+
-	-- |  x000  | REG1   | First Register       	 |
-	-- |  x004  | REG2   | Second Register      	 |
+	-- |  x000  | REG1   | Basic R/W Register      	 |
+	-- |  x004  | REG2   | Basic R/W Register      	 |
+	-- |  x008  | REG3   | Basic R/W Register      	 |
+	-- |  x00C  | REG4   | Basic R/W Register      	 |
 	-- +--------+--------+---------------------------+
 
 	signal Reg1    : std_logic_vector(31 downto 0);
