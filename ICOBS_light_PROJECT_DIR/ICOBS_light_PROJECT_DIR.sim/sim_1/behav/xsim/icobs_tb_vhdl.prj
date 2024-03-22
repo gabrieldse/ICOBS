@@ -1,0 +1,52 @@
+# compile vhdl design source files
+vhdl interface  \
+"../../../../../ICOBS_light/RTL/OBI/obi_lib.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX.vhd" \
+
+vhdl common  \
+"../../../../../ICOBS_light/RTL/LIB/constants.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../ICOBS_light/RTL/ICOBS_light_TOP.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahb_decoder_mcu.vhd" \
+
+vhdl amba3  \
+"../../../../../ICOBS_light/RTL/LIB/amba3.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_defaultslave.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_gpio.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_my_periph.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_rstclk.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_timer.vhd" \
+"../../../../../ICOBS_light/RTL/AHBLITE/ahblite_uart.vhd" \
+"../../../../../ICOBS_light/RTL/clk_div.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/clkdiv.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/compteur.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/gestion_an.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/hex7seg.vhd" \
+"../../../../../ICOBS_light/RTL/io_driver.vhd" \
+"../../../../../ICOBS_light/RTL/MCU/mcu_interconnect.vhd" \
+"../../../../../ICOBS_light/RTL/MCU/mcu_peripherals.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/mux4x4.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/obi_2_ram.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/obi_2_rom.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/obi_ahb_bridge.vhd" \
+"../../../../../ICOBS_light/RTL/poweron_reset.vhd" \
+"../../../../../ICOBS_light/RTL/7SEG/seg_top.vhd" \
+"../../../../../ICOBS_light/RTL/MCU/top_mcu.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../../ICOBS_light/RTL/OBI/arbiter.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/decoder.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/port_master.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/port_slave.vhd" \
+"../../../../../ICOBS_light/RTL/OBI/xbar.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../ICOBS_light/TB/icobs_tb.vhd" \
+
+# Do not sort compile order
+nosort

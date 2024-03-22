@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../ICOBS_light/RTL/IBEX/SHARED" \
+"../../../../ICOBS_light_PROJECT_DIR.gen/sources_1/ip/SPRAM_32x16384/sim/SPRAM_32x16384.v" \
+"../../../../ICOBS_light_PROJECT_DIR.gen/sources_1/ip/SPROM_32x1024/sim/SPROM_32x1024.v" \
+
+sv xil_defaultlib  --include "../../../../../ICOBS_light/RTL/IBEX/SHARED" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_pkg.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_alu.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_compressed_decoder.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_controller.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_core.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_counter.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_cs_registers.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_decoder.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_ex_block.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_fetch_fifo.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_id_stage.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_if_stage.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_load_store_unit.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_multdiv_fast.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_prefetch_buffer.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_register_file_fpga.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_wb_stage.sv" \
+"../../../../../ICOBS_light/RTL/IBEX/SHARED/prim_clock_gating.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

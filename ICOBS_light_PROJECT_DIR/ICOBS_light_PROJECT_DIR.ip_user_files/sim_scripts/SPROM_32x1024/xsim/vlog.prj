@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../ICOBS_light_PROJECT_DIR.gen/sources_1/ip/SPROM_32x1024/sim/SPROM_32x1024.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

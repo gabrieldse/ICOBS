@@ -1,0 +1,5 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/LIB/amba3.vhd,1683215862,vhdl,C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_defaultslave.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_gpio.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_my_periph.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_rstclk.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_timer.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_uart.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_peripherals.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd;C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_ahb_bridge.vhd,,,ahblite;apb,,,,,,,,

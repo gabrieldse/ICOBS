@@ -1,0 +1,2 @@
+SPRAM_32x16384.v,verilog,xil_defaultlib,../../../../ICOBS_light_PROJECT_DIR.gen/sources_1/ip/SPRAM_32x16384/sim/SPRAM_32x16384.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

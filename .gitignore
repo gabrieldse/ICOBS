@@ -1,7 +1,10 @@
-~*
 *~
 *.jou
 *.log
 .Xil
-ICOBS_light_PROJECT_DIR
+/ICOBS_light/ZIPS_bootloader/
 *.str
+
+/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.*/**/**/*
+!/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/impl_*/**/*.bin
+
