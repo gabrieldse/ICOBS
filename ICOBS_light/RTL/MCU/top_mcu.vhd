@@ -56,7 +56,14 @@ entity top_mcu is
 		--7seg diplay interface
         seg         : out std_logic_vector(0 to 6);
         an          : out std_logic_vector(3 downto 0);
-        dp          : out std_logic);
+        dp          : out std_logic;
+        
+        -- VGA
+        Hsync : out  STD_LOGIC;
+        Vsync : out  STD_LOGIC;
+        vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0));
 	end;
 
 ----------------------------------------------------------------
@@ -215,7 +222,14 @@ architecture arch of top_mcu is
 		
 		seg         : out std_logic_vector(0 to 6);
 	    an          : out std_logic_vector(3 downto 0);
-	    dp          : out std_logic);
+	    dp          : out std_logic;
+	    
+        -- VGA
+        Hsync : out  STD_LOGIC;
+        Vsync : out  STD_LOGIC;
+        vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0));
 	end component;
 
 	-- Reset
@@ -353,7 +367,15 @@ begin
 			
 			seg => seg,
             an => an,
-            dp => dp);
+            dp => dp,
+            
+            -- FOR VGA conector
+            Hsync => Hsync,
+            Vsync => Vsync,
+            vgaRed => vgaRed,
+            vgaGreen => vgaGreen,
+            vgaBlue => vgaBlue
+            );
 
 	rom0_adapter: obi_2_rom
 	port map (

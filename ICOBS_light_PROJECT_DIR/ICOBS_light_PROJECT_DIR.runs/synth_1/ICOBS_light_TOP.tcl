@@ -71,7 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -81,7 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.cache/wt [current_project]
 set_property parent.project_path C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.cache/ip [current_project]
@@ -94,6 +94,10 @@ add_files C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DI
 add_files C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/ICOBS_light/COE/demo-icobs-light.coe
 add_files C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/COE/testcode_icobs_light.coe
 add_files C:/Users/Gabriel/Downloads/testcode_icobs_light.coe
+add_files C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/COE/car.coe
+add_files c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/COE/kensei.coe
+add_files c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/COE/knight.coe
+add_files c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/COE/sorcerer.coe
 read_verilog C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/SHARED/prim_assert.sv
 set_property file_type "Verilog Header" [get_files C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/SHARED/prim_assert.sv]
 read_verilog -library xil_defaultlib -sv {
@@ -119,13 +123,17 @@ read_verilog -library xil_defaultlib -sv {
 read_vhdl -library interface C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_lib.vhd
 read_vhdl -library xil_defaultlib {
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/IBEX.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_640_x_480.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_clkdiv.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahb_decoder_mcu.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_defaultslave.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_gpio.vhd
-  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_my_periph.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_rstclk.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_timer.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/AHBLITE/ahblite_uart.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/clk_div.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/7SEG/clkdiv.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/7SEG/compteur.vhd
@@ -135,6 +143,7 @@ read_vhdl -library xil_defaultlib {
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_interconnect.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_peripherals.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/7SEG/mux4x4.vhd
+  C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/my_periph.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_ram.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_rom.vhd
   C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_ahb_bridge.vhd
@@ -157,6 +166,20 @@ set_property used_in_implementation false [get_files -all c:/projets_polytech/VH
 
 read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/SPROM_32x1024/SPROM_32x1024.xci
 set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/SPROM_32x1024/SPROM_32x1024_ooc.xdc]
+
+read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi_board.xdc]
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi.xdc]
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi_ooc.xdc]
+
+read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite/prom_sprite.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite/prom_sprite_ooc.xdc]
+
+read_ip -quiet c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite3/prom_sprite3.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite3/prom_sprite3_ooc.xdc]
+
+read_ip -quiet c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite2/prom_sprite2.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite2/prom_sprite2_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

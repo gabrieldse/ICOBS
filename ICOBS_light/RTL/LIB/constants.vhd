@@ -44,7 +44,10 @@ package constants is
 
 		CID_UART1,
 		
-		CID_MY_PERIPH);
+		CID_MY_PERIPH,
+		
+		CID_VGA
+		);
 
 	constant CID_MAX : integer := CID_ENUM'pos(CID_ENUM'right);
 

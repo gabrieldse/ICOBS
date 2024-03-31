@@ -62,11 +62,39 @@ entity mcu_peripherals is port (
 	IOPC_TRIS 				: out std_logic_vector(IOPC_LEN-1 downto 0);
 
 	UART_RX					: in  std_logic;
-	UART_TX					: out std_logic);
+	UART_TX					: out std_logic;
+	
+	-- VGA
+	Hsync : out  STD_LOGIC;
+    Vsync : out  STD_LOGIC;
+    vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+    vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+    vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0)
+	);
 end;
 
 ----------------------------------------------------------------
 architecture arch of mcu_peripherals is
+
+    component ahblite_my_vga
+    port (
+        HRESETn     : in  std_logic;
+        HCLK        : in  std_logic;
+        HSEL        : in  std_logic;
+        HREADY      : in  std_logic;
+    
+    -- FOR VGA conector
+         Hsync : out  STD_LOGIC;
+         Vsync : out  STD_LOGIC;
+         vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+         vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+         vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0);
+        
+        -- AHB-Lite interface
+        AHBLITE_IN  : in  AHBLite_master_vector;
+        AHBLITE_OUT : out AHBLite_slave_vector
+         );
+    end component ;
 
 	component obi_2_ahb
 	port (
@@ -257,6 +285,26 @@ architecture arch of mcu_peripherals is
 	signal M_AHB_0_hwrite 		: STD_LOGIC;
 
 begin
+    U_ahblite_my_vga : ahblite_my_vga
+    port map (
+        HRESETn     => HRESETn,
+		HCLK        => HCLK,
+		HSEL        => HSEL(CID_ENUM'pos(CID_VGA)), -- returns the position of CID_MY_PERIPH in the enumeration CID_ENUM.
+		HREADY      => MasterIn.HREADYOUT,
+		
+    -- FOR VGA conector
+		Hsync => Hsync,
+		Vsync => Vsync,
+		vgaRed => vgaRed,
+		vgaGreen => vgaGreen,
+		vgaBlue => vgaBlue,
+
+		-- AHB-Lite interface
+		AHBLITE_IN  => BusMasterOut,
+		AHBLITE_OUT => BusSlaveArray(CID_ENUM'pos(CID_VGA))
+         );
+         
+         
 
 	bridge: obi_2_ahb
 	port map (

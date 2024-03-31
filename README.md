@@ -1,6 +1,11 @@
 Ibex Core Based System light
 ================================================================
 
+```hs
+# Get rid of the *.zoneIdentifier
+Get-ChildItem -Path "C:\projets_polytech\VHDL_Icobs_Project\Hardware" -Recurse -Filter "*.zoneIdentifier" | Remove-Item
+```
+
 <div align="center"><img src="ICOBS_light/IMG/logo_ICOBS_bl.png" width="200"/></div>
 
 # Project structure

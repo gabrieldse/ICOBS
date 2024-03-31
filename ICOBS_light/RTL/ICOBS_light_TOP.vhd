@@ -43,7 +43,13 @@ entity ICOBS_light_TOP is
 		--7seg diplay interface
         seg         : out std_logic_vector(0 to 6);
         an          : out std_logic_vector(3 downto 0);
-        dp          : out std_logic);
+        dp          : out std_logic;
+        -- VGA
+        Hsync : out  STD_LOGIC;
+        Vsync : out  STD_LOGIC;
+        vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0));
     end;
 
 ----------------------------------------------------------------
@@ -81,7 +87,13 @@ architecture arch of ICOBS_light_TOP is
 		--7seg diplay interface
         seg         : out std_logic_vector(0 to 6);
         an          : out std_logic_vector(3 downto 0);
-        dp          : out std_logic);
+        dp          : out std_logic;
+        -- VGA
+        Hsync : out  STD_LOGIC;
+        Vsync : out  STD_LOGIC;
+        vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
+        vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0));
     end component;
 
     component io_driver
@@ -153,9 +165,17 @@ begin
 		UART_RX			=> UART_RX,
 		UART_TX			=> UART_TX,
 		
-			seg => seg,
-            an => an,
-            dp => dp);
+        seg => seg,
+        an => an,
+        dp => dp,
+        
+        -- FOR VGA conector
+        Hsync => Hsync,
+        Vsync => Vsync,
+        vgaRed => vgaRed,
+        vgaGreen => vgaGreen,
+        vgaBlue => vgaBlue
+        );
 
     GPIOA: io_driver
 	generic map (IOPA_LEN)
