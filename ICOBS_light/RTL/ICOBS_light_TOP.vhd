@@ -133,7 +133,6 @@ architecture arch of ICOBS_light_TOP is
 
 ----------------------------------------------------------------
 begin
-
     POR: poweron_reset
 	port map (
 		CLK 			=> SYSCLK,

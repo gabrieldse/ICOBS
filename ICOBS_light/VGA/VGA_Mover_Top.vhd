@@ -123,7 +123,7 @@ BEGIN
 	PORT MAP(mclk => clk, rst => rst,clk0001=>clk0001);
 	U_definicao : VGA_640_x_480
 	PORT MAP(rst => rst, clk => clk25, hsync => Hsync, vsync => Vsync, hc => hc, vc => vc, vidon => vidon);
-	U_Afichage : VGA_Display_Basic_ROM  
+	U_Afichage : VGA_Display_Basic_ROM
 	port map (vidon => vidon, hc => hc, vc => vc, rom_addr1 => addr1, rom_addr2 => addr2,rom_addr3 => addr3,R1=>R1,R2=>R2,R3=>R3,BACKGROUND => BACKGROUND,C1=>C1,C2=>C2,C3=>C3,IMG1=> douta1,IMG2=> douta2,IMG3=> douta3,vgaRed=>vgaRed,vgaGreen=>vgaGreen,vgaBlue=>vgaBlue);
 	
 	U_promsprite : prom_sprite
