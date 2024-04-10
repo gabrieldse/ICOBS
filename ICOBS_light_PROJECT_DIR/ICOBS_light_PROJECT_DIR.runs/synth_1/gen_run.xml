@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1712134887" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ICOBS_light_TOP.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1712759680" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ICOBS_light_TOP.dcp">
   <File Type="PA-TCL" Name="ICOBS_light_TOP.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ICOBS_light_TOP_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ICOBS_light_TOP_reports.tcl"/>
@@ -16,13 +16,6 @@
         <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../ICOBS_light/IP/SPRAM_32x16384/SPRAM_32x16384.xci"/>
         <Attr Name="ImportTime" Val="1710772651"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/prom_sprite/prom_sprite.xci">
-      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -525,6 +518,54 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/avatar.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/avatar_recontruted.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/blizzard.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/inferno.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/avatar_shot.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/avatar_shot_orange.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/winner.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ICOBS_light/COE/loser.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="ICOBS_light_TOP"/>
@@ -564,5 +605,6 @@
   <BlockFileSet Type="BlockSrcs" Name="prom_sprite2"/>
   <BlockFileSet Type="BlockSrcs" Name="SPROM_32x1024"/>
   <BlockFileSet Type="BlockSrcs" Name="VGA_Clock_Multi"/>
+  <BlockFileSet Type="BlockSrcs" Name="prom_sprite"/>
   <BlockFileSet Type="BlockSrcs" Name="prom_sprite3"/>
 </GenRun>

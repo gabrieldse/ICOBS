@@ -20,9 +20,9 @@ ENTITY VGA_Display_Basic_ROM IS
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		rom_addr1 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI
-		rom_addr2 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI]
-		rom_addr3 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0)--TAMANHO AQUI
+		rom_addr1 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
+		rom_addr2 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI]
+		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
 	);
 END VGA_Display_Basic_ROM;
 
@@ -37,8 +37,8 @@ ARCHITECTURE Behavioral OF VGA_Display_Basic_ROM IS
 	-- W =LARGURA Do sprite
 	-- H = ALTURA Do sprite
 	--TAMANHO AQUI
-	CONSTANT w1 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
-	CONSTANT h1 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10); 
+	CONSTANT w1 : unsigned(9 DOWNTO 0) := to_unsigned(79, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
+	CONSTANT h1 : unsigned(9 DOWNTO 0) := to_unsigned(79, 10); 
 	SIGNAL xpix1, ypix1 : unsigned(9 DOWNTO 0);
 	SIGNAL rom_addr_s1 : std_logic_vector(19 DOWNTO 0);
 	
@@ -47,8 +47,8 @@ SIGNAL spriteon2 : STD_LOGIC;
 --TAMANHO AQUI
 -- W =LARGURA Do sprite
 	-- H = ALTURA Do sprite
-	CONSTANT w2 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
-	CONSTANT h2 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10); 
+	CONSTANT w2 : unsigned(9 DOWNTO 0) := to_unsigned(78, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
+	CONSTANT h2 : unsigned(9 DOWNTO 0) := to_unsigned(78, 10); 
 	SIGNAL xpix2, ypix2 : unsigned(9 DOWNTO 0);
 	SIGNAL rom_addr_s2 : std_logic_vector(19 DOWNTO 0);
 -------------------------------------------------------------------------------------
@@ -58,8 +58,8 @@ SIGNAL spriteon3 : STD_LOGIC;
 --TAMANHO AQUI
 -- W =LARGURA Do sprite
 	-- H = ALTURA Do sprite
-	CONSTANT w3 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
-	CONSTANT h3 : unsigned(9 DOWNTO 0) := to_unsigned(95, 10); 
+	CONSTANT w3 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
+	CONSTANT h3 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10); 
 	SIGNAL xpix3, ypix3 : unsigned(9 DOWNTO 0);
 	SIGNAL rom_addr_s3 : std_logic_vector(19 DOWNTO 0);
 -------------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ xpix1 <= unsigned(hc) - (hbp + C1);
 ypix1 <= unsigned(vc) - (vbp + R1);
 rom_addr_s1 <= std_logic_vector((ypix1*w1) + xpix1);
 
-rom_addr1 <= rom_addr_s1(13 downto 0); --TAMANHO AQUI
+rom_addr1 <= rom_addr_s1(12 downto 0); --TAMANHO AQUI
 
 spriteon1 <= '1' WHEN (unsigned(hc) >= C1 + hbp AND unsigned(hc) < C1 + hbp + w1 AND
 	            unsigned(vc) >= R1 + vbp AND unsigned(vc) < R1 + vbp + h1)
@@ -83,7 +83,7 @@ xpix2 <= unsigned(hc) - (hbp + C2);
 ypix2 <= unsigned(vc) - (vbp + R2);
 rom_addr_s2 <= std_logic_vector((ypix2*w2) + xpix2);
 
-rom_addr2 <= rom_addr_s2(13 downto 0); --TAMANHO AQUI
+rom_addr2 <= rom_addr_s2(12 downto 0); --TAMANHO AQUI
 
 spriteon2 <= '1' WHEN (unsigned(hc) >= C2 + hbp AND unsigned(hc) < C2 + hbp + w2 AND
 	            unsigned(vc) >= R2 + vbp AND unsigned(vc) < R2 + vbp + h2)
@@ -95,7 +95,7 @@ xpix3 <= unsigned(hc) - (hbp + C3);
 ypix3 <= unsigned(vc) - (vbp + R3);
 rom_addr_s3 <= std_logic_vector((ypix3*w3) + xpix3);
 
-rom_addr3 <= rom_addr_s3(13 downto 0); --TAMANHO AQUI
+rom_addr3 <= rom_addr_s3(10 downto 0); --TAMANHO AQUI
 
 spriteon3 <= '1' WHEN (unsigned(hc) >= C3 + hbp AND unsigned(hc) < C3 + hbp + w3 AND
 	            unsigned(vc) >= R3 + vbp AND unsigned(vc) < R3 + vbp + h3)
@@ -126,7 +126,7 @@ spriteon3 <= '1' WHEN (unsigned(hc) >= C3 + hbp AND unsigned(hc) < C3 + hbp + w3
 			vgaBlue <= IMG3 (3 DOWNTO 0);
 			--Muda a cor de fundo BACKGROUND
 		ELSIF vidon = '1' THEN
-		 vgaRed <= BACKGROUND(11 downto 8) ;--(others =>'1');
+		vgaRed <= BACKGROUND(11 downto 8) ;--(others =>'1');
 		vgaGreen <= BACKGROUND(7 downto 4);-- 
 		vgaBlue  <= BACKGROUND(3 downto 0); --(others =>'0');
 

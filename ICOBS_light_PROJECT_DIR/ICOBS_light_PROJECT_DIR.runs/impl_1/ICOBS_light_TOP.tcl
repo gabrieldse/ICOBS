@@ -139,11 +139,11 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/ICOBS_light_TOP.dcp
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/SPRAM_32x16384/SPRAM_32x16384.xci
-  read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite/prom_sprite.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/SPROM_32x1024/SPROM_32x1024.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi.xci
-  read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite3/prom_sprite3.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite2/prom_sprite2.xci
+  read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite/prom_sprite.xci
+  read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite3/prom_sprite3.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/FPGA/Basys3-Master.xdc
 OPTRACE "read constraints: implementation" END { }

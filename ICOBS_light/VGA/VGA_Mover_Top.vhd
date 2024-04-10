@@ -64,32 +64,32 @@ component VGA_Display_Basic_ROM IS
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		rom_addr1 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI
-		rom_addr2 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI]
-		rom_addr3 : OUT STD_LOGIC_VECTOR (13 DOWNTO 0)--TAMANHO AQUI
+		rom_addr1 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
+		rom_addr2 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI]
+		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
 	);
 END component;
 
 component prom_sprite IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    addra : IN STD_LOGIC_VECTOR(12 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0) --TAMANHO
   );
 END component;
 
 component prom_sprite2 IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+    addra : IN STD_LOGIC_VECTOR(12 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0) --TAMANHO
   );
 END component;
 
 component prom_sprite3 IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0); --size
+    addra : IN STD_LOGIC_VECTOR(10 DOWNTO 0); --size
     douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END component;
@@ -108,8 +108,9 @@ component VGA_Clock_Multi is
 --signal N : integer := 19;
 	SIGNAL rst, clk25, vidon, clk100,clk0001 : std_logic;
 	SIGNAL hc1, vc1, hc, vc : std_logic_vector(9 DOWNTO 0);
-	SIGNAL addr1, addr2: STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI
-	SIGNAL addr3: STD_LOGIC_VECTOR (13 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL addr1: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL addr2: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL addr3: STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
 	SIGNAL douta1,douta2,douta3 : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	
 	

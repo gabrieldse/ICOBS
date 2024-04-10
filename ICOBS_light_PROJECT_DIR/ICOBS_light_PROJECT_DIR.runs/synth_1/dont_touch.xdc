@@ -5,6 +5,3 @@
 
 # IP: ip/SPRAM_32x16384/SPRAM_32x16384.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==SPRAM_32x16384 || ORIG_REF_NAME==SPRAM_32x16384} -quiet] -quiet
-
-# IP: ip/prom_sprite/prom_sprite.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==prom_sprite || ORIG_REF_NAME==prom_sprite} -quiet] -quiet
