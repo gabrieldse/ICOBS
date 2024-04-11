@@ -43,7 +43,9 @@ component VGA_Top is
 		Vsync : OUT STD_LOGIC;
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		
  );
 end component;
 ----------------------------------------------------------------
@@ -89,6 +91,12 @@ end component;
 	signal X3POS_vector:  unsigned(9 DOWNTO 0);
 	Signal Y3POS:  std_logic_vector(31 downto 0);
 	signal X3POS:  std_logic_vector(31 downto 0);
+	
+	--FOR THE SPRITE  4 CONTROL -- NEWIMAGE
+	Signal Y4POS_vector:  unsigned(9 DOWNTO 0);
+	signal X4POS_vector:  unsigned(9 DOWNTO 0);
+	Signal Y4POS:  std_logic_vector(31 downto 0);
+	signal X4POS:  std_logic_vector(31 downto 0);
 		
 ----------------------------------------------------------------
 begin
@@ -100,6 +108,9 @@ Y2POS_vector <= UNSIGNED(Y2POS(9 downto 0));
 
 X3POS_vector <= UNSIGNED(X3POS(9 downto 0));
 Y3POS_vector <= UNSIGNED(Y3POS(9 downto 0));
+
+X4POS_vector <= UNSIGNED(X4POS(9 downto 0));
+Y4POS_vector <= UNSIGNED(Y4POS(9 downto 0)); --NEWIMAGE
 
 RST <= not HRESETn;
 
@@ -118,30 +129,9 @@ U_VGA :  VGA_Top
 		Vsync => Vsync,
 		vgaRed => vgaRed,
 		vgaGreen => vgaGreen,
-		vgaBlue => vgaBlue
+		vgaBlue => vgaBlue,
+		R4 => Y4POS_vector,C4 => X4POS_vector --newimage
  );
-
---port (
---	HRESETn     : in  std_logic;
---	HCLK        : in  std_logic;
---	HSEL        : in  std_logic;
---	HREADY      : in  std_logic;
-
----- FOR VGA conector
---     Hsync : out  STD_LOGIC;
---     Vsync : out  STD_LOGIC;
---     vgaRed : out  STD_LOGIC_VECTOR (3 downto 0);
---     vgaGreen : out  STD_LOGIC_VECTOR (3 downto 0);
---     vgaBlue : out  STD_LOGIC_VECTOR (3 downto 0);
-    
---	-- AHB-Lite interface
---	AHBLITE_IN  : in  AHBLite_master_vector;
---	AHBLITE_OUT : out AHBLite_slave_vector
---	 );
---end;
-
-
-
 
 	AHBLITE_OUT <= to_vector(SlaveOut);
 	SlaveIn <= to_record(AHBLITE_IN);
@@ -171,6 +161,9 @@ U_VGA :  VGA_Top
 			Y2POS <= (others => '0');
 			X3POS <=(others => '0');
 			Y3POS <= (others => '0');
+			X4POS <=(others => '0'); Y4POS <= (others => '0'); --newimage
+			
+			
 			--RST <= '1';
 			--xpos  <= (others => '0');
 			--ypos <= (others => '0');
@@ -186,14 +179,11 @@ U_VGA :  VGA_Top
 			if SlaveOut.HRESP = '0' and lastwr = '1' then
 				case lastaddr is
 					when x"00" => Background    <= SlaveIn.HWDATA;
-					when x"01" => X1POS   <= SlaveIn.HWDATA;
-					when x"02" => Y1POS   <= SlaveIn.HWDATA;
-					when x"03" => X2POS   <= SlaveIn.HWDATA;
-					when x"04" => Y2POS   <= SlaveIn.HWDATA;
-					when x"05" => X3POS   <= SlaveIn.HWDATA;
-					when x"06" => Y3POS   <= SlaveIn.HWDATA;  
-					
-					--when x"03" => Reg4    <= SlaveIn.HWDATA;
+					when x"01" => X1POS   <= SlaveIn.HWDATA; when x"02" => Y1POS   <= SlaveIn.HWDATA;
+					when x"03" => X2POS   <= SlaveIn.HWDATA; when x"04" => Y2POS   <= SlaveIn.HWDATA;
+					when x"05" => X3POS   <= SlaveIn.HWDATA; when x"06" => Y3POS   <= SlaveIn.HWDATA;  
+					when x"07" => X4POS   <= SlaveIn.HWDATA; when x"08" => Y4POS   <= SlaveIn.HWDATA;  --newimage
+
 					when others =>
 				end case;
 			end if;
@@ -205,12 +195,11 @@ U_VGA :  VGA_Top
 					SlaveOut.HRDATA <= (others => '0');
 					case address is
 						when x"00" => SlaveOut.HRDATA    <= Background;
-						when x"01" => SlaveOut.HRDATA    <= X1POS;
-						when x"02" => SlaveOut.HRDATA    <= Y1POS;
-						when x"03" => SlaveOut.HRDATA    <= X2POS;
-						when x"04" => SlaveOut.HRDATA    <= Y2POS;
-						when x"05" => SlaveOut.HRDATA    <= X3POS;
-						when x"06" => SlaveOut.HRDATA    <= Y3POS;
+						when x"01" => SlaveOut.HRDATA    <= X1POS; when x"02" => SlaveOut.HRDATA    <= Y1POS;
+						when x"03" => SlaveOut.HRDATA    <= X2POS; when x"04" => SlaveOut.HRDATA    <= Y2POS;
+						when x"05" => SlaveOut.HRDATA    <= X3POS; when x"06" => SlaveOut.HRDATA    <= Y3POS;
+						when x"07" => SlaveOut.HRDATA    <= X4POS; when x"08" => SlaveOut.HRDATA    <= Y4POS; --newimage
+						
 						--when x"03" => SlaveOut.HRDATA    <= Reg4;
 						when others =>
 					end case;

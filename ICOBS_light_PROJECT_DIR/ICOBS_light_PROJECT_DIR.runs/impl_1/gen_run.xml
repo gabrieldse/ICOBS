@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1712759680">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1712839398">
   <File Type="ROUTE-PWR" Name="ICOBS_light_TOP_power_routed.rpt"/>
   <File Type="PA-TCL" Name="ICOBS_light_TOP.tcl"/>
   <File Type="BITSTR-MMI" Name="ICOBS_light_TOP.mmi"/>
@@ -684,5 +684,6 @@
   <BlockFileSet Type="BlockSrcs" Name="SPROM_32x1024"/>
   <BlockFileSet Type="BlockSrcs" Name="VGA_Clock_Multi"/>
   <BlockFileSet Type="BlockSrcs" Name="prom_sprite"/>
+  <BlockFileSet Type="BlockSrcs" Name="prom_sprite4"/>
   <BlockFileSet Type="BlockSrcs" Name="prom_sprite3"/>
 </GenRun>

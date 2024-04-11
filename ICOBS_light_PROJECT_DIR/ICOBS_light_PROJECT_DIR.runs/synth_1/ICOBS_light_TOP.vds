@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Wed Apr 10 16:34:44 2024
-# Process ID: 19860
+# Start of session at: Thu Apr 11 14:43:25 2024
+# Process ID: 16896
 # Current directory: C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1
 # Command line: vivado.exe -log ICOBS_light_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ICOBS_light_TOP.tcl
 # Log file: C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/ICOBS_light_TOP.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-PDOT4RD, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 17056 MB
 #-----------------------------------------------------------
 source ICOBS_light_TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 385.809 ; gain = 45.395
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 385.414 ; gain = 43.895
 Command: read_checkpoint -auto_incremental -incremental C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/utils_1/imports/synth_1/ICOBS_light_TOP.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/utils_1/imports/synth_1/ICOBS_light_TOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,7 +24,7 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15816
+INFO: [Synth 8-7075] Helper process launched with PID 18472
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 WARNING: [Synth 8-11067] parameter 'PMP_MAX_REGIONS' declared inside package 'ibex_pkg' shall be treated as localparam [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_pkg.sv:304]
 WARNING: [Synth 8-11067] parameter 'PMP_CFG_W' declared inside package 'ibex_pkg' shall be treated as localparam [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_pkg.sv:305]
@@ -45,7 +45,7 @@ WARNING: [Synth 8-11067] parameter 'CSR_MEIX_BIT' declared inside package 'ibex_
 WARNING: [Synth 8-11067] parameter 'CSR_MFIX_BIT_LOW' declared inside package 'ibex_pkg' shall be treated as localparam [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_pkg.sv:505]
 WARNING: [Synth 8-11067] parameter 'CSR_MFIX_BIT_HIGH' declared inside package 'ibex_pkg' shall be treated as localparam [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/IBEX/IBEX_CORE/ibex_pkg.sv:506]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1208.949 ; gain = 409.227
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1210.680 ; gain = 407.809
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ICOBS_light_TOP' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/ICOBS_light_TOP.vhd:56]
 INFO: [Synth 8-3491] module 'poweron_reset' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/poweron_reset.vhd:13' bound to instance 'POR' of component 'poweron_reset' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/ICOBS_light_TOP.vhd:136]
@@ -269,30 +269,32 @@ INFO: [Synth 8-3491] module 'mcu_peripherals' declared at 'C:/projets_polytech/V
 INFO: [Synth 8-638] synthesizing module 'mcu_peripherals' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_peripherals.vhd:77]
 INFO: [Synth 8-3491] module 'ahblite_my_vga' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd:8' bound to instance 'U_ahblite_my_vga' of component 'ahblite_my_vga' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_peripherals.vhd:288]
 INFO: [Synth 8-638] synthesizing module 'ahblite_my_vga' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd:29]
-INFO: [Synth 8-3491] module 'VGA_Top' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:5' bound to instance 'U_VGA' of component 'VGA_Top' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd:106]
-INFO: [Synth 8-638] synthesizing module 'VGA_Top' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:24]
-WARNING: [Synth 8-5640] Port 'locked' is missing in component declaration [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:97]
-INFO: [Synth 8-3491] module 'VGA_Clock_Multi' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/VGA_Clock_Multi_stub.vhdl:5' bound to instance 'clkIP' of component 'VGA_Clock_Multi' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:120]
-INFO: [Synth 8-638] synthesizing module 'VGA_Clock_Multi' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/VGA_Clock_Multi_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'VGA_Top' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:5' bound to instance 'U_VGA' of component 'VGA_Top' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'VGA_Top' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:26]
+WARNING: [Synth 8-5640] Port 'locked' is missing in component declaration [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:111]
+INFO: [Synth 8-3491] module 'VGA_Clock_Multi' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/VGA_Clock_Multi_stub.vhdl:5' bound to instance 'clkIP' of component 'VGA_Clock_Multi' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'VGA_Clock_Multi' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/VGA_Clock_Multi_stub.vhdl:16]
 	Parameter N bound to: 19 - type: integer 
-INFO: [Synth 8-3491] module 'VGA_clkdiv' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_clkdiv.vhd:6' bound to instance 'clkPequeno' of component 'VGA_clkdiv' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:122]
+INFO: [Synth 8-3491] module 'VGA_clkdiv' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_clkdiv.vhd:6' bound to instance 'clkPequeno' of component 'VGA_clkdiv' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:136]
 INFO: [Synth 8-638] synthesizing module 'VGA_clkdiv' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_clkdiv.vhd:18]
 	Parameter N bound to: 19 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'VGA_clkdiv' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_clkdiv.vhd:18]
-INFO: [Synth 8-3491] module 'VGA_640_x_480' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_640_x_480.vhd:5' bound to instance 'U_definicao' of component 'VGA_640_x_480' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:125]
+INFO: [Synth 8-3491] module 'VGA_640_x_480' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_640_x_480.vhd:5' bound to instance 'U_definicao' of component 'VGA_640_x_480' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:139]
 INFO: [Synth 8-638] synthesizing module 'VGA_640_x_480' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_640_x_480.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'VGA_640_x_480' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_640_x_480.vhd:15]
-INFO: [Synth 8-3491] module 'VGA_Display_Basic_ROM' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:5' bound to instance 'U_Afichage' of component 'VGA_Display_Basic_ROM' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:127]
-INFO: [Synth 8-638] synthesizing module 'VGA_Display_Basic_ROM' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:29]
-WARNING: [Synth 8-614] signal 'BACKGROUND' is read in the process but is not in the sensitivity list [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:106]
-INFO: [Synth 8-256] done synthesizing module 'VGA_Display_Basic_ROM' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:29]
-INFO: [Synth 8-3491] module 'prom_sprite' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite_stub.vhdl:5' bound to instance 'U_promsprite' of component 'prom_sprite' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:130]
-INFO: [Synth 8-638] synthesizing module 'prom_sprite' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'prom_sprite2' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite2_stub.vhdl:5' bound to instance 'U_promsprite2' of component 'prom_sprite2' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:132]
-INFO: [Synth 8-638] synthesizing module 'prom_sprite2' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite2_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'prom_sprite3' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite3_stub.vhdl:5' bound to instance 'U_promsprite3' of component 'prom_sprite3' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:134]
-INFO: [Synth 8-638] synthesizing module 'prom_sprite3' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/prom_sprite3_stub.vhdl:14]
-INFO: [Synth 8-256] done synthesizing module 'VGA_Top' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:24]
+INFO: [Synth 8-3491] module 'VGA_Display_Basic_ROM' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:5' bound to instance 'U_Afichage' of component 'VGA_Display_Basic_ROM' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'VGA_Display_Basic_ROM' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:33]
+WARNING: [Synth 8-614] signal 'BACKGROUND' is read in the process but is not in the sensitivity list [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:132]
+INFO: [Synth 8-256] done synthesizing module 'VGA_Display_Basic_ROM' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Basic_ROM.vhd:33]
+INFO: [Synth 8-3491] module 'prom_sprite' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite_stub.vhdl:5' bound to instance 'U_promsprite' of component 'prom_sprite' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:162]
+INFO: [Synth 8-638] synthesizing module 'prom_sprite' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'prom_sprite2' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite2_stub.vhdl:5' bound to instance 'U_promsprite2' of component 'prom_sprite2' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'prom_sprite2' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'prom_sprite3' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite3_stub.vhdl:5' bound to instance 'U_promsprite3' of component 'prom_sprite3' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'prom_sprite3' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'prom_sprite4' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite4_stub.vhdl:5' bound to instance 'U_promsprite4' of component 'prom_sprite4' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'prom_sprite4' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/prom_sprite4_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'VGA_Top' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/VGA_Mover_Top.vhd:26]
 INFO: [Synth 8-256] done synthesizing module 'ahblite_my_vga' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/VGA/ahblite_vga.vhd:29]
 INFO: [Synth 8-3491] module 'obi_2_ahb' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_ahb_bridge.vhd:28' bound to instance 'bridge' of component 'obi_2_ahb' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/mcu_peripherals.vhd:309]
 INFO: [Synth 8-638] synthesizing module 'obi_2_ahb' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_ahb_bridge.vhd:53]
@@ -351,15 +353,15 @@ INFO: [Synth 8-256] done synthesizing module 'mcu_peripherals' (0#1) [C:/projets
 INFO: [Synth 8-3491] module 'obi_2_rom' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_rom.vhd:9' bound to instance 'rom0_adapter' of component 'obi_2_rom' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:380]
 INFO: [Synth 8-638] synthesizing module 'obi_2_rom' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_rom.vhd:23]
 INFO: [Synth 8-256] done synthesizing module 'obi_2_rom' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_rom.vhd:23]
-INFO: [Synth 8-3491] module 'SPROM_32x1024' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/SPROM_32x1024_stub.vhdl:5' bound to instance 'ROM' of component 'SPROM_32x1024' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:393]
-INFO: [Synth 8-638] synthesizing module 'SPROM_32x1024' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/SPROM_32x1024_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'SPROM_32x1024' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/SPROM_32x1024_stub.vhdl:5' bound to instance 'ROM' of component 'SPROM_32x1024' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:393]
+INFO: [Synth 8-638] synthesizing module 'SPROM_32x1024' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/SPROM_32x1024_stub.vhdl:15]
 INFO: [Synth 8-3491] module 'obi_2_ram' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_ram.vhd:9' bound to instance 'ram1_adapter' of component 'obi_2_ram' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:400]
 INFO: [Synth 8-638] synthesizing module 'obi_2_ram' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_ram.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'obi_2_ram' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_ram.vhd:25]
-INFO: [Synth 8-3491] module 'SPRAM_32x16384' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:5' bound to instance 'RAM1' of component 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:415]
-INFO: [Synth 8-638] synthesizing module 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'SPRAM_32x16384' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:5' bound to instance 'RAM1' of component 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:415]
+INFO: [Synth 8-638] synthesizing module 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:17]
 INFO: [Synth 8-3491] module 'obi_2_ram' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/OBI/obi_2_ram.vhd:9' bound to instance 'ram2_adapter' of component 'obi_2_ram' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:424]
-INFO: [Synth 8-3491] module 'SPRAM_32x16384' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-19860-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:5' bound to instance 'RAM2' of component 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:439]
+INFO: [Synth 8-3491] module 'SPRAM_32x16384' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/.Xil/Vivado-16896-DESKTOP-PDOT4RD/realtime/SPRAM_32x16384_stub.vhdl:5' bound to instance 'RAM2' of component 'SPRAM_32x16384' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:439]
 INFO: [Synth 8-256] done synthesizing module 'top_mcu' (0#1) [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/MCU/top_mcu.vhd:70]
 	Parameter N bound to: 16 - type: integer 
 INFO: [Synth 8-3491] module 'io_driver' declared at 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/io_driver.vhd:12' bound to instance 'GPIOA' of component 'io_driver' [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/RTL/ICOBS_light_TOP.vhd:179]
@@ -542,18 +544,18 @@ WARNING: [Synth 8-7129] Port AHBLITE_IN[51] in module ahblite_uart is either unc
 WARNING: [Synth 8-7129] Port AHBLITE_IN[50] in module ahblite_uart is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1361.824 ; gain = 562.102
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1365.602 ; gain = 562.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1361.824 ; gain = 562.102
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1365.602 ; gain = 562.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1361.824 ; gain = 562.102
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1365.602 ; gain = 562.730
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.314 . Memory (MB): peak = 1361.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.328 . Memory (MB): peak = 1365.602 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -570,6 +572,8 @@ Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PR
 Finished Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite2/prom_sprite2/prom_sprite2_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite2'
 Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite/prom_sprite/prom_sprite_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite'
 Finished Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite/prom_sprite/prom_sprite_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite'
+Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite4/prom_sprite4/prom_sprite4_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite4'
+Finished Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite4/prom_sprite4/prom_sprite4_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite4'
 Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite3/prom_sprite3/prom_sprite3_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite3'
 Finished Parsing XDC File [c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite3/prom_sprite3/prom_sprite3_in_context.xdc] for cell 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite3'
 Parsing XDC File [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/FPGA/Basys3-Master.xdc]
@@ -580,26 +584,27 @@ Parsing XDC File [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PR
 Finished Parsing XDC File [C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1445.422 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1449.773 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1445.422 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1449.773 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite3' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite4' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -610,9 +615,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for MCU/ROM. (constraint file  auto g
 Applied set_property KEEP_HIERARCHY = SOFT for MCU/periphs/U_ahblite_my_vga/U_VGA/clkIP. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite4. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MCU/periphs/U_ahblite_my_vga/U_VGA/U_promsprite3. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'md_state_q_reg' in module 'ibex_multdiv_fast'
 INFO: [Synth 8-802] inferred FSM for state register 'ls_fsm_cs_reg' in module 'ibex_load_store_unit'
@@ -640,7 +646,7 @@ WAIT_RVALID_MIS_GNTS_DONE |                              011 |                  
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ls_fsm_cs_reg' using encoding 'sequential' in module 'ibex_load_store_unit'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -653,9 +659,9 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit       Adders := 2     
 	   2 Input   31 Bit       Adders := 1     
 	   2 Input   16 Bit       Adders := 3     
-	   3 Input   11 Bit       Adders := 6     
-	   2 Input   10 Bit       Adders := 14    
-	   3 Input   10 Bit       Adders := 6     
+	   3 Input   11 Bit       Adders := 8     
+	   2 Input   10 Bit       Adders := 18    
+	   3 Input   10 Bit       Adders := 8     
 	   2 Input    5 Bit       Adders := 4     
 	   2 Input    4 Bit       Adders := 2     
 	   2 Input    2 Bit       Adders := 8     
@@ -667,7 +673,7 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 2     
 	               40 Bit    Registers := 10    
 	               34 Bit    Registers := 2     
-	               32 Bit    Registers := 39    
+	               32 Bit    Registers := 41    
 	               31 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
 	               16 Bit    Registers := 13    
@@ -741,10 +747,10 @@ Detailed RTL Component Info :
 	  11 Input    2 Bit        Muxes := 1     
 	   8 Input    2 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 262   
+	   2 Input    1 Bit        Muxes := 264   
 	   7 Input    1 Bit        Muxes := 13    
 	   5 Input    1 Bit        Muxes := 17    
-	   8 Input    1 Bit        Muxes := 10    
+	   8 Input    1 Bit        Muxes := 3     
 	   4 Input    1 Bit        Muxes := 43    
 	   3 Input    1 Bit        Muxes := 2     
 	   6 Input    1 Bit        Muxes := 14    
@@ -754,6 +760,7 @@ Detailed RTL Component Info :
 	  11 Input    1 Bit        Muxes := 20    
 	   9 Input    1 Bit        Muxes := 1     
 	  15 Input    1 Bit        Muxes := 1     
+	  10 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -782,8 +789,11 @@ DSP Report: operator U_VGA/U_Afichage/rom_addr_s20 is absorbed into DSP U_VGA/U_
 DSP Report: Generating DSP U_VGA/U_Afichage/rom_addr_s3, operation Mode is: C+A*(B:0x22).
 DSP Report: operator U_VGA/U_Afichage/rom_addr_s3 is absorbed into DSP U_VGA/U_Afichage/rom_addr_s3.
 DSP Report: operator U_VGA/U_Afichage/rom_addr_s30 is absorbed into DSP U_VGA/U_Afichage/rom_addr_s3.
+DSP Report: Generating DSP U_VGA/U_Afichage/rom_addr_s4, operation Mode is: C+A*(B:0x22).
+DSP Report: operator U_VGA/U_Afichage/rom_addr_s4 is absorbed into DSP U_VGA/U_Afichage/rom_addr_s4.
+DSP Report: operator U_VGA/U_Afichage/rom_addr_s40 is absorbed into DSP U_VGA/U_Afichage/rom_addr_s4.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:02:14 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:03 ; elapsed = 00:02:18 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -806,6 +816,7 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |VGA_Display_Basic_ROM | C+A*(B:0x4f) | 10     | 7      | 10     | -      | 13     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGA_Display_Basic_ROM | C+A*(B:0x4e) | 10     | 7      | 10     | -      | 13     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGA_Display_Basic_ROM | C+A*(B:0x22) | 10     | 6      | 10     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|VGA_Display_Basic_ROM | C+A*(B:0x22) | 10     | 6      | 10     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +----------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -816,13 +827,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:08 ; elapsed = 00:02:28 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:16 ; elapsed = 00:02:33 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:18 ; elapsed = 00:02:38 . Memory (MB): peak = 1445.438 ; gain = 645.715
+Finished Timing Optimization : Time (s): cpu = 00:02:26 ; elapsed = 00:02:43 . Memory (MB): peak = 1450.125 ; gain = 647.254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -842,7 +853,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:26 ; elapsed = 00:02:48 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Technology Mapping : Time (s): cpu = 00:02:35 ; elapsed = 00:02:53 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -860,37 +871,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:33 ; elapsed = 00:02:55 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished IO Insertion : Time (s): cpu = 00:02:42 ; elapsed = 00:03:00 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:33 ; elapsed = 00:02:55 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:42 ; elapsed = 00:03:00 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:34 ; elapsed = 00:02:56 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:43 ; elapsed = 00:03:02 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:34 ; elapsed = 00:02:57 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:43 ; elapsed = 00:03:02 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:35 ; elapsed = 00:02:57 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:43 ; elapsed = 00:03:02 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:35 ; elapsed = 00:02:57 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:43 ; elapsed = 00:03:02 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -903,6 +914,7 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |ibex_multdiv_fast     | C+A*B       | 30     | 18     | 48     | -      | 34     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGA_Display_Basic_ROM | C+A*B       | 10     | 7      | 10     | -      | 13     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGA_Display_Basic_ROM | C+A*B       | 10     | 7      | 10     | -      | 13     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|VGA_Display_Basic_ROM | C+A*B       | 10     | 6      | 10     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |VGA_Display_Basic_ROM | C+A*B       | 10     | 6      | 10     | -      | 11     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +----------------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
@@ -917,6 +929,7 @@ Report BlackBoxes:
 |4     |prom_sprite     |         1|
 |5     |prom_sprite2    |         1|
 |6     |prom_sprite3    |         1|
+|7     |prom_sprite4    |         1|
 +------+----------------+----------+
 
 Report Cell Usage: 
@@ -928,51 +941,52 @@ Report Cell Usage:
 |4     |VGA_Clock_Multi_bbox |     1|
 |5     |prom_sprite2_bbox    |     1|
 |6     |prom_sprite3_bbox    |     1|
-|7     |prom_sprite_bbox     |     1|
-|8     |BUFG                 |     3|
-|9     |CARRY4               |   234|
-|10    |DSP48E1              |     4|
-|11    |LUT1                 |    21|
-|12    |LUT2                 |   423|
-|13    |LUT3                 |   831|
-|14    |LUT4                 |   767|
-|15    |LUT5                 |   912|
-|16    |LUT6                 |  2079|
-|17    |MUXF7                |     7|
-|18    |RAM32M               |    10|
-|19    |RAM32X1D             |     4|
-|20    |FDCE                 |  1948|
-|21    |FDPE                 |    35|
-|22    |FDRE                 |   304|
-|23    |LD                   |     1|
-|24    |IBUF                 |    39|
-|25    |OBUF                 |    26|
-|26    |OBUFT                |    37|
+|7     |prom_sprite4_bbox    |     1|
+|8     |prom_sprite_bbox     |     1|
+|9     |BUFG                 |     3|
+|10    |CARRY4               |   250|
+|11    |DSP48E1              |     5|
+|12    |LUT1                 |    21|
+|13    |LUT2                 |   430|
+|14    |LUT3                 |   835|
+|15    |LUT4                 |   765|
+|16    |LUT5                 |   915|
+|17    |LUT6                 |  2162|
+|18    |MUXF7                |     7|
+|19    |RAM32M               |    10|
+|20    |RAM32X1D             |     4|
+|21    |FDCE                 |  2012|
+|22    |FDPE                 |    35|
+|23    |FDRE                 |   304|
+|24    |LD                   |     1|
+|25    |IBUF                 |    39|
+|26    |OBUF                 |    26|
+|27    |OBUFT                |    37|
 +------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:35 ; elapsed = 00:02:57 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:43 ; elapsed = 00:03:02 . Memory (MB): peak = 1729.648 ; gain = 926.777
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 572 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:18 ; elapsed = 00:02:52 . Memory (MB): peak = 1714.129 ; gain = 830.793
-Synthesis Optimization Complete : Time (s): cpu = 00:02:35 ; elapsed = 00:02:57 . Memory (MB): peak = 1714.129 ; gain = 914.406
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:26 ; elapsed = 00:02:57 . Memory (MB): peak = 1729.648 ; gain = 842.254
+Synthesis Optimization Complete : Time (s): cpu = 00:02:44 ; elapsed = 00:03:03 . Memory (MB): peak = 1729.648 ; gain = 926.777
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.260 . Memory (MB): peak = 1714.129 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 260 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.299 . Memory (MB): peak = 1729.648 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 277 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1714.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1729.648 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 15 instances were transformed.
   LD => LDCE (inverted pins: G): 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
 
-Synth Design complete, checksum: b0e2ee57
+Synth Design complete, checksum: 915f3a69
 INFO: [Common 17-83] Releasing license: Synthesis
-321 Infos, 147 Warnings, 0 Critical Warnings and 0 Errors encountered.
+323 Infos, 148 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:43 ; elapsed = 00:03:08 . Memory (MB): peak = 1714.129 ; gain = 1295.945
+synth_design: Time (s): cpu = 00:02:53 ; elapsed = 00:03:14 . Memory (MB): peak = 1729.648 ; gain = 1311.434
 INFO: [Common 17-1381] The checkpoint 'C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.runs/synth_1/ICOBS_light_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ICOBS_light_TOP_utilization_synth.rpt -pb ICOBS_light_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 10 16:38:06 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 14:46:53 2024...

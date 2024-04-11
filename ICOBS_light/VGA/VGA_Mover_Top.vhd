@@ -17,7 +17,9 @@ entity VGA_Top is
 		Vsync : OUT STD_LOGIC;
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		
  );
 end VGA_Top;
 
@@ -48,12 +50,13 @@ end component;
 
 component VGA_Display_Basic_ROM IS
 	PORT (
-		vidon : IN STD_LOGIC;
+        vidon : IN STD_LOGIC;
 		hc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		vc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		IMG1: IN std_logic_vector(11 DOWNTO 0);
 		IMG2: IN std_logic_vector(11 DOWNTO 0);
 		IMG3: IN std_logic_vector(11 DOWNTO 0);
+		IMG4: IN std_logic_vector(11 DOWNTO 0);
 		BACKGROUND: in  STD_LOGIC_VECTOR (11 downto 0);
 		R1: IN unsigned(9 DOWNTO 0);
 		C1: IN unsigned(9 DOWNTO 0);
@@ -61,12 +64,15 @@ component VGA_Display_Basic_ROM IS
 		C2: IN unsigned(9 DOWNTO 0);
 		R3: IN unsigned(9 DOWNTO 0);
 		C3: IN unsigned(9 DOWNTO 0);
+		R4: IN unsigned(9 DOWNTO 0);
+		C4: IN unsigned(9 DOWNTO 0);
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		rom_addr1 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
 		rom_addr2 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI]
-		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
+		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
+		rom_addr4 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
 	);
 END component;
 
@@ -89,7 +95,15 @@ END component;
 component prom_sprite3 IS
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(10 DOWNTO 0); --size
+    addra : IN STD_LOGIC_VECTOR(10 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)  --TAMANHO
+  );
+END component;
+
+component prom_sprite4 IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(10 DOWNTO 0); --TAMANHO
     douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
   );
 END component;
@@ -110,8 +124,8 @@ component VGA_Clock_Multi is
 	SIGNAL hc1, vc1, hc, vc : std_logic_vector(9 DOWNTO 0);
 	SIGNAL addr1: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
 	SIGNAL addr2: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
-	SIGNAL addr3: STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
-	SIGNAL douta1,douta2,douta3 : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL addr3, addr4: STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL douta1,douta2,douta3,douta4 : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	
 	
 BEGIN
@@ -125,7 +139,25 @@ BEGIN
 	U_definicao : VGA_640_x_480
 	PORT MAP(rst => rst, clk => clk25, hsync => Hsync, vsync => Vsync, hc => hc, vc => vc, vidon => vidon);
 	U_Afichage : VGA_Display_Basic_ROM
-	port map (vidon => vidon, hc => hc, vc => vc, rom_addr1 => addr1, rom_addr2 => addr2,rom_addr3 => addr3,R1=>R1,R2=>R2,R3=>R3,BACKGROUND => BACKGROUND,C1=>C1,C2=>C2,C3=>C3,IMG1=> douta1,IMG2=> douta2,IMG3=> douta3,vgaRed=>vgaRed,vgaGreen=>vgaGreen,vgaBlue=>vgaBlue);
+	port map (vidon => vidon,
+	    hc => hc,
+	    vc => vc,
+	    BACKGROUND => BACKGROUND,
+	    rom_addr2 => addr2,
+	    rom_addr3 => addr3,
+	    R2=>R2,
+	    R3=>R3,
+	    C2=>C2,
+	    C3=>C3,
+	    IMG2=> douta2,
+	    IMG3=> douta3,
+	    vgaRed=>vgaRed,
+	    vgaGreen=>vgaGreen,
+	    vgaBlue=>vgaBlue,
+	    rom_addr1 => addr1, R1=>R1, C1=>C1, IMG1=> douta1,
+	    rom_addr4 => addr4, R4=>R4, C4=>C4, IMG4=> douta4 -- NEWIMAGE
+	    
+	    );
 	
 	U_promsprite : prom_sprite
 	PORT MAP(clka => clk100, addra => addr1, douta => douta1);
@@ -133,6 +165,8 @@ BEGIN
 	port map (clka => clk100, addra => addr2, douta => douta2);
 	U_promsprite3 : prom_sprite3 
 	port map (clka => clk100, addra => addr3, douta => douta3);
+	U_promsprite4 : prom_sprite4 
+	port map (clka => clk100, addra => addr4, douta => douta4);
 	
 end Behavioral;
 

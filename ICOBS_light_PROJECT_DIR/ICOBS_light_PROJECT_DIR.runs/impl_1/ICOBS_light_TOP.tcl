@@ -143,6 +143,7 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/VGA_Clock_Multi/VGA_Clock_Multi.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite2/prom_sprite2.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite/prom_sprite.xci
+  read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite4/prom_sprite4.xci
   read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite3/prom_sprite3.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light/FPGA/Basys3-Master.xdc
