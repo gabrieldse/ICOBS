@@ -18,7 +18,14 @@ entity VGA_Top is
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R5: IN unsigned(9 DOWNTO 0); C5: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R6: IN unsigned(9 DOWNTO 0); C6: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R7: IN unsigned(9 DOWNTO 0); C7: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		--R8: IN unsigned(9 DOWNTO 0); C8: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		--R9: IN unsigned(9 DOWNTO 0); C9: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		--R10: IN unsigned(9 DOWNTO 0); C10: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		
 		
  );
 end VGA_Top;
@@ -50,7 +57,7 @@ end component;
 
 component VGA_Display_Basic_ROM IS
 	PORT (
-        vidon : IN STD_LOGIC;
+	    vidon : IN STD_LOGIC;
 		hc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		vc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		IMG1: IN std_logic_vector(11 DOWNTO 0);
@@ -72,7 +79,37 @@ component VGA_Display_Basic_ROM IS
 		rom_addr1 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
 		rom_addr2 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI]
 		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
-		rom_addr4 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
+		rom_addr4 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0); --TAMANHO AQUI
+		----- sprite 5 -------- NEW IMAGE
+		IMG5: IN std_logic_vector(11 DOWNTO 0);
+		R5: IN unsigned(9 DOWNTO 0);
+		C5: IN unsigned(9 DOWNTO 0);
+		rom_addr5 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 6 -------- NEW IMAGE
+		IMG6: IN std_logic_vector(11 DOWNTO 0);
+		R6: IN unsigned(9 DOWNTO 0);
+		C6: IN unsigned(9 DOWNTO 0);
+		rom_addr6 : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 7 -------- NEW IMAGE
+		IMG7: IN std_logic_vector(11 DOWNTO 0);
+		R7: IN unsigned(9 DOWNTO 0);
+		C7: IN unsigned(9 DOWNTO 0);
+		rom_addr7 : OUT STD_LOGIC_VECTOR (8 DOWNTO 0)--TAMANHO AQUI
+		----- sprite 8 -------- NEW IMAGE
+		--IMG8: IN std_logic_vector(11 DOWNTO 0);
+		--R8: IN unsigned(9 DOWNTO 0);
+		--C8: IN unsigned(9 DOWNTO 0);
+		--rom_addr8 : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 9 -------- NEW IMAGE
+		--IMG9: IN std_logic_vector(11 DOWNTO 0);
+		--R9: IN unsigned(9 DOWNTO 0);
+		--C9: IN unsigned(9 DOWNTO 0);
+		--rom_addr9 : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 10 -------- NEW IMAGE
+		--IMG10: IN std_logic_vector(11 DOWNTO 0);
+		--R10: IN unsigned(9 DOWNTO 0);
+		--C10: IN unsigned(9 DOWNTO 0);
+		--rom_addr10 : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)--TAMANHO AQUI
 	);
 END component;
 
@@ -108,6 +145,54 @@ component prom_sprite4 IS
   );
 END component;
 
+component prom_sprite5 IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(10 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  );
+END component;
+
+component prom_sprite6 IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  );
+END component;
+
+component prom_sprite7 IS
+  PORT (
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(8 DOWNTO 0); --TAMANHO
+    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  );
+END component;
+
+--component prom_sprite8 IS
+  --PORT (
+    --clka : IN STD_LOGIC;
+    --addra : IN STD_LOGIC_VECTOR(18 DOWNTO 0); --TAMANHO
+    --douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  --);
+--END component;
+
+--component prom_sprite9 IS
+  --PORT (
+    --clka : IN STD_LOGIC;
+    --addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0); --TAMANHO
+    --douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  --);
+--END component;
+
+--component prom_sprite10 IS
+  --PORT (
+    --clka : IN STD_LOGIC;
+    --addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0); --TAMANHO
+    --douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+  --);
+--END component;
+
 component VGA_Clock_Multi is
  port(
     mclk : IN STD_LOGIC;
@@ -124,8 +209,15 @@ component VGA_Clock_Multi is
 	SIGNAL hc1, vc1, hc, vc : std_logic_vector(9 DOWNTO 0);
 	SIGNAL addr1: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
 	SIGNAL addr2: STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
-	SIGNAL addr3, addr4: STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
-	SIGNAL douta1,douta2,douta3,douta4 : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL addr3, addr4,addr5: STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL addr6: STD_LOGIC_VECTOR (9 DOWNTO 0);--TAMANHO AQUI
+	SIGNAL addr7: STD_LOGIC_VECTOR (8 DOWNTO 0);--TAMANHO AQUI
+	--SIGNAL addr8: STD_LOGIC_VECTOR (18 DOWNTO 0);--TAMANHO AQUI
+	--SIGNAL addr10: STD_LOGIC_VECTOR (15 DOWNTO 0);--TAMANHO AQUI
+	--SIGNAL addr9: STD_LOGIC_VECTOR (15 DOWNTO 0);--TAMANHO AQUI
+	
+	
+	SIGNAL douta1,douta2,douta3,douta4,douta5,douta6,douta7 : STD_LOGIC_VECTOR(11 DOWNTO 0); --douta8;douta9douta10
 	
 	
 BEGIN
@@ -155,7 +247,14 @@ BEGIN
 	    vgaGreen=>vgaGreen,
 	    vgaBlue=>vgaBlue,
 	    rom_addr1 => addr1, R1=>R1, C1=>C1, IMG1=> douta1,
-	    rom_addr4 => addr4, R4=>R4, C4=>C4, IMG4=> douta4 -- NEWIMAGE
+	    rom_addr4 => addr4, R4=>R4, C4=>C4, IMG4=> douta4, -- NEWIMAGE
+	    rom_addr5 => addr5, R5=>R5, C5=>C5, IMG5=> douta5, -- NEWIMAGE
+	    rom_addr6 => addr6, R6=>R6, C6=>C6, IMG6=> douta6, -- NEWIMAGE
+	    rom_addr7 => addr7, R7=>R7, C7=>C7, IMG7=> douta7 -- NEWIMAGE
+	    --rom_addr8 => addr8, R8=>R8, C8=>C8, IMG8=> douta8, -- NEWIMAGE
+	    --rom_addr9 => addr9, R9=>R9, C9=>C9, IMG9=> douta9, -- NEWIMAGE
+	    --rom_addr10 => addr10, R10=>R10, C10=>C10, IMG10=> douta10 -- NEWIMAGE
+	    
 	    
 	    );
 	
@@ -167,6 +266,22 @@ BEGIN
 	port map (clka => clk100, addra => addr3, douta => douta3);
 	U_promsprite4 : prom_sprite4 
 	port map (clka => clk100, addra => addr4, douta => douta4);
+	U_promsprite5 : prom_sprite5 
+	port map (clka => clk100, addra => addr5, douta => douta5);
+	U_promsprite6 : prom_sprite6 
+	port map (clka => clk100, addra => addr6, douta => douta6);
+	U_promsprite7 : prom_sprite7 
+	port map (clka => clk100, addra => addr7, douta => douta7);
+	--U_promsprite8 : prom_sprite8 
+	--port map (clka => clk100, addra => addr8, douta => douta8);
+	--U_promsprite9 : prom_sprite9 
+	--port map (clka => clk100, addra => addr9, douta => douta9);
+	--U_promsprite10 : prom_sprite10 
+	--port map (clka => clk100, addra => addr10, douta => douta10); --newimage
+	
+	
+	
+	
 	
 end Behavioral;
 

@@ -780,7 +780,6 @@
     <FileSet Name="prom_sprite5" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prom_sprite5" RelGenDir="$PGENDIR/prom_sprite5">
       <File Path="$PSRCDIR/sources_1/ip/prom_sprite5/prom_sprite5.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -794,7 +793,6 @@
     <FileSet Name="prom_sprite6" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prom_sprite6" RelGenDir="$PGENDIR/prom_sprite6">
       <File Path="$PSRCDIR/sources_1/ip/prom_sprite6/prom_sprite6.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -808,7 +806,6 @@
     <FileSet Name="prom_sprite7" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prom_sprite7" RelGenDir="$PGENDIR/prom_sprite7">
       <File Path="$PSRCDIR/sources_1/ip/prom_sprite7/prom_sprite7.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -940,11 +937,12 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="prom_sprite5_synth_1" Type="Ft3:Synth" SrcSet="prom_sprite5" Part="xc7a35tcpg236-1" ConstrsSet="prom_sprite5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/prom_sprite5_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/prom_sprite5_synth_1">
+    <Run Id="prom_sprite5_synth_1" Type="Ft3:Synth" SrcSet="prom_sprite5" Part="xc7a35tcpg236-1" ConstrsSet="prom_sprite5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/prom_sprite5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/prom_sprite5_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/prom_sprite5_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>

@@ -189,6 +189,15 @@ set_property used_in_implementation false [get_files -all c:/projets_polytech/VH
 read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite4/prom_sprite4.xci
 set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite4/prom_sprite4_ooc.xdc]
 
+read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite5/prom_sprite5.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite5/prom_sprite5_ooc.xdc]
+
+read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite6/prom_sprite6.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite6/prom_sprite6_ooc.xdc]
+
+read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite7/prom_sprite7.xci
+set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite7/prom_sprite7_ooc.xdc]
+
 read_ip -quiet C:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.srcs/sources_1/ip/prom_sprite3/prom_sprite3.xci
 set_property used_in_implementation false [get_files -all c:/projets_polytech/VHDL_Icobs_Project/Hardware/ICOBS_light_PROJECT_DIR/ICOBS_light_PROJECT_DIR.gen/sources_1/ip/prom_sprite3/prom_sprite3_ooc.xdc]
 

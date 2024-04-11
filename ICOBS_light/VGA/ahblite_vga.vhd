@@ -44,8 +44,13 @@ component VGA_Top is
 		vgaRed : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaGreen : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		vgaBlue : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0) --NEWIMAGE
-		
+		R4: IN unsigned(9 DOWNTO 0); C4: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R5: IN unsigned(9 DOWNTO 0); C5: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R6: IN unsigned(9 DOWNTO 0); C6: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		R7: IN unsigned(9 DOWNTO 0); C7: IN unsigned(9 DOWNTO 0) --NEWIMAGE
+		--R8: IN unsigned(9 DOWNTO 0); C8: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		--R9: IN unsigned(9 DOWNTO 0); C9: IN unsigned(9 DOWNTO 0); --NEWIMAGE
+		--R10: IN unsigned(9 DOWNTO 0); C10: IN unsigned(9 DOWNTO 0) --NEWIMAGE	
  );
 end component;
 ----------------------------------------------------------------
@@ -97,7 +102,43 @@ end component;
 	signal X4POS_vector:  unsigned(9 DOWNTO 0);
 	Signal Y4POS:  std_logic_vector(31 downto 0);
 	signal X4POS:  std_logic_vector(31 downto 0);
+	
+	--FOR THE SPRITE  5 CONTROL -- NEWIMAGE
+	Signal Y5POS_vector:  unsigned(9 DOWNTO 0);
+	signal X5POS_vector:  unsigned(9 DOWNTO 0);
+	Signal Y5POS:  std_logic_vector(31 downto 0);
+	signal X5POS:  std_logic_vector(31 downto 0);
 		
+	--FOR THE SPRITE  6 CONTROL -- NEWIMAGE
+	Signal Y6POS_vector:  unsigned(9 DOWNTO 0);
+	signal X6POS_vector:  unsigned(9 DOWNTO 0);
+	Signal Y6POS:  std_logic_vector(31 downto 0);
+	signal X6POS:  std_logic_vector(31 downto 0);
+		
+	--FOR THE SPRITE  7 CONTROL -- NEWIMAGE
+	Signal Y7POS_vector:  unsigned(9 DOWNTO 0);
+	signal X7POS_vector:  unsigned(9 DOWNTO 0);
+	Signal Y7POS:  std_logic_vector(31 downto 0);
+	signal X7POS:  std_logic_vector(31 downto 0);
+		
+	--FOR THE SPRITE  8 CONTROL -- NEWIMAGE
+	--Signal Y8POS_vector:  unsigned(9 DOWNTO 0);
+	--signal X8POS_vector:  unsigned(9 DOWNTO 0);
+	--Signal Y8POS:  std_logic_vector(31 downto 0);
+	--signal X8POS:  std_logic_vector(31 downto 0);
+		
+	--FOR THE SPRITE  9 CONTROL -- NEWIMAGE
+	--Signal Y9POS_vector:  unsigned(9 DOWNTO 0);
+	--signal X9POS_vector:  unsigned(9 DOWNTO 0);
+	--Signal Y9POS:  std_logic_vector(31 downto 0);
+	--signal X9POS:  std_logic_vector(31 downto 0);
+		
+	--FOR THE SPRITE  10 CONTROL -- NEWIMAGE
+	--Signal Y10POS_vector:  unsigned(9 DOWNTO 0);
+	--signal X10POS_vector:  unsigned(9 DOWNTO 0);
+	--Signal Y10POS:  std_logic_vector(31 downto 0);
+	--signal X10POS:  std_logic_vector(31 downto 0);
+
 ----------------------------------------------------------------
 begin
 X1POS_vector <= UNSIGNED(X1POS(9 downto 0));
@@ -110,7 +151,26 @@ X3POS_vector <= UNSIGNED(X3POS(9 downto 0));
 Y3POS_vector <= UNSIGNED(Y3POS(9 downto 0));
 
 X4POS_vector <= UNSIGNED(X4POS(9 downto 0));
-Y4POS_vector <= UNSIGNED(Y4POS(9 downto 0)); --NEWIMAGE
+Y4POS_vector <= UNSIGNED(Y4POS(9 downto 0));
+
+X5POS_vector <= UNSIGNED(X5POS(9 downto 0));
+Y5POS_vector <= UNSIGNED(Y5POS(9 downto 0));
+
+X6POS_vector <= UNSIGNED(X6POS(9 downto 0));
+Y6POS_vector <= UNSIGNED(Y6POS(9 downto 0));
+
+X7POS_vector <= UNSIGNED(X7POS(9 downto 0));
+Y7POS_vector <= UNSIGNED(Y7POS(9 downto 0));
+
+--X8POS_vector <= UNSIGNED(X8POS(9 downto 0));
+--Y8POS_vector <= UNSIGNED(Y8POS(9 downto 0));
+
+--X9POS_vector <= UNSIGNED(X9POS(9 downto 0));
+--Y9POS_vector <= UNSIGNED(Y9POS(9 downto 0));
+
+--X10POS_vector <= UNSIGNED(X10POS(9 downto 0));
+--Y10POS_vector <= UNSIGNED(Y10POS(9 downto 0)); --new image
+
 
 RST <= not HRESETn;
 
@@ -130,7 +190,13 @@ U_VGA :  VGA_Top
 		vgaRed => vgaRed,
 		vgaGreen => vgaGreen,
 		vgaBlue => vgaBlue,
-		R4 => Y4POS_vector,C4 => X4POS_vector --newimage
+		R4 => Y4POS_vector,C4 => X4POS_vector,
+		R5 => Y5POS_vector,C5 => X5POS_vector,
+		R6 => Y6POS_vector,C6 => X6POS_vector,
+        R7 => Y7POS_vector,C7 => X7POS_vector
+        --R8 => Y8POS_vector,C8 => X8POS_vector,
+        --R9 => Y9POS_vector,C9 => X9POS_vector,
+        --R10 => Y10POS_vector,C10 => X10POS_vector
  );
 
 	AHBLITE_OUT <= to_vector(SlaveOut);
@@ -161,13 +227,13 @@ U_VGA :  VGA_Top
 			Y2POS <= (others => '0');
 			X3POS <=(others => '0');
 			Y3POS <= (others => '0');
-			X4POS <=(others => '0'); Y4POS <= (others => '0'); --newimage
-			
-			
-			--RST <= '1';
-			--xpos  <= (others => '0');
-			--ypos <= (others => '0');
-			--Reg4 <= (others => '0')
+			X4POS <=(others => '0'); Y4POS <= (others => '0');
+			X5POS <=(others => '0'); Y5POS <= (others => '0');
+			X6POS <=(others => '0'); Y6POS <= (others => '0');
+            X7POS <=(others => '0'); Y7POS <= (others => '0');
+            --X8POS <=(others => '0'); Y8POS <= (others => '0');
+            --X9POS <=(others => '0'); Y9POS <= (others => '0');
+            --X10POS <=(others => '0'); Y10POS <= (others => '0'); --newimage
 
 		--------------------------------
 		elsif rising_edge(HCLK) then
@@ -182,7 +248,13 @@ U_VGA :  VGA_Top
 					when x"01" => X1POS   <= SlaveIn.HWDATA; when x"02" => Y1POS   <= SlaveIn.HWDATA;
 					when x"03" => X2POS   <= SlaveIn.HWDATA; when x"04" => Y2POS   <= SlaveIn.HWDATA;
 					when x"05" => X3POS   <= SlaveIn.HWDATA; when x"06" => Y3POS   <= SlaveIn.HWDATA;  
-					when x"07" => X4POS   <= SlaveIn.HWDATA; when x"08" => Y4POS   <= SlaveIn.HWDATA;  --newimage
+					when x"07" => X4POS   <= SlaveIn.HWDATA; when x"08" => Y4POS   <= SlaveIn.HWDATA;
+					when x"09" => X5POS   <= SlaveIn.HWDATA; when x"0a" => Y5POS   <= SlaveIn.HWDATA;
+                    when x"0b" => X6POS   <= SlaveIn.HWDATA; when x"0c" => Y6POS   <= SlaveIn.HWDATA;
+                    when x"0d" => X7POS   <= SlaveIn.HWDATA; when x"0e" => Y7POS   <= SlaveIn.HWDATA;
+                    --when x"0f" => X8POS   <= SlaveIn.HWDATA; when x"10" => Y8POS   <= SlaveIn.HWDATA;
+                    --when x"11" => X9POS   <= SlaveIn.HWDATA; when x"12" => Y9POS   <= SlaveIn.HWDATA;
+                    --when x"13" => X10POS   <= SlaveIn.HWDATA; when x"14" => Y10POS   <= SlaveIn.HWDATA;
 
 					when others =>
 				end case;
@@ -193,14 +265,20 @@ U_VGA :  VGA_Top
 				-- Read operation: retrieve data and fill empty spaces with '0'
 				if SlaveIn.HWRITE = '0' then
 					SlaveOut.HRDATA <= (others => '0');
+					
 					case address is
 						when x"00" => SlaveOut.HRDATA    <= Background;
 						when x"01" => SlaveOut.HRDATA    <= X1POS; when x"02" => SlaveOut.HRDATA    <= Y1POS;
 						when x"03" => SlaveOut.HRDATA    <= X2POS; when x"04" => SlaveOut.HRDATA    <= Y2POS;
 						when x"05" => SlaveOut.HRDATA    <= X3POS; when x"06" => SlaveOut.HRDATA    <= Y3POS;
-						when x"07" => SlaveOut.HRDATA    <= X4POS; when x"08" => SlaveOut.HRDATA    <= Y4POS; --newimage
-						
-						--when x"03" => SlaveOut.HRDATA    <= Reg4;
+						when x"07" => SlaveOut.HRDATA    <= X4POS; when x"08" => SlaveOut.HRDATA    <= Y4POS;
+						when x"09" => SlaveOut.HRDATA    <= X5POS; when x"0a" => SlaveOut.HRDATA    <= Y5POS;
+						when x"0b" => SlaveOut.HRDATA    <= X6POS; when x"0c" => SlaveOut.HRDATA    <= Y6POS;
+						when x"0d" => SlaveOut.HRDATA    <= X7POS; when x"0e" => SlaveOut.HRDATA    <= Y7POS;
+						--when x"0f" => SlaveOut.HRDATA    <= X8POS; when x"10" => SlaveOut.HRDATA    <= Y8POS;
+						--when x"11" => SlaveOut.HRDATA    <= X9POS; when x"12" => SlaveOut.HRDATA    <= Y9POS;
+						--when x"13" => SlaveOut.HRDATA    <= X10POS; when x"14" => SlaveOut.HRDATA    <= Y10POS;
+
 						when others =>
 					end case;
 				end if;

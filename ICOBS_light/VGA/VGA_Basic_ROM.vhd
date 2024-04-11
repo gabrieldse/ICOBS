@@ -4,7 +4,7 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY VGA_Display_Basic_ROM IS
 	PORT (
-	   vidon : IN STD_LOGIC;
+	    vidon : IN STD_LOGIC;
 		hc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		vc : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		IMG1: IN std_logic_vector(11 DOWNTO 0);
@@ -26,7 +26,37 @@ ENTITY VGA_Display_Basic_ROM IS
 		rom_addr1 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI
 		rom_addr2 : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);--TAMANHO AQUI]
 		rom_addr3 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
-		rom_addr4 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0)--TAMANHO AQUI
+		rom_addr4 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0); --TAMANHO AQUI
+		----- sprite 5 -------- NEW IMAGE
+		IMG5: IN std_logic_vector(11 DOWNTO 0);
+		R5: IN unsigned(9 DOWNTO 0);
+		C5: IN unsigned(9 DOWNTO 0);
+		rom_addr5 : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 6 -------- NEW IMAGE
+		IMG6: IN std_logic_vector(11 DOWNTO 0);
+		R6: IN unsigned(9 DOWNTO 0);
+		C6: IN unsigned(9 DOWNTO 0);
+		rom_addr6 : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 7 -------- NEW IMAGE
+		IMG7: IN std_logic_vector(11 DOWNTO 0);
+		R7: IN unsigned(9 DOWNTO 0);
+		C7: IN unsigned(9 DOWNTO 0);
+		rom_addr7 : OUT STD_LOGIC_VECTOR (8 DOWNTO 0)--TAMANHO AQUI
+		----- sprite 8 -------- NEW IMAGE
+		--IMG8: IN std_logic_vector(11 DOWNTO 0);
+		--R8: IN unsigned(9 DOWNTO 0);
+		--C8: IN unsigned(9 DOWNTO 0);
+		--rom_addr8 : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 9 -------- NEW IMAGE
+		--IMG9: IN std_logic_vector(11 DOWNTO 0);
+		--R9: IN unsigned(9 DOWNTO 0);
+		--C9: IN unsigned(9 DOWNTO 0);
+		--rom_addr9 : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);--TAMANHO AQUI
+		----- sprite 10 -------- NEW IMAGE
+		--IMG10: IN std_logic_vector(11 DOWNTO 0);
+		--R10: IN unsigned(9 DOWNTO 0);
+		--C10: IN unsigned(9 DOWNTO 0);
+		--rom_addr10 : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)--TAMANHO AQUI
 	);
 END VGA_Display_Basic_ROM;
 
@@ -73,11 +103,77 @@ SIGNAL spriteon4 : STD_LOGIC;
 --TAMANHO AQUI
     -- W =LARGURA Do sprite
 	-- H = ALTURA Do sprite
-	CONSTANT w4 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10);--10 é tamanho padrão para esta resolução para conseguir calcular com as outras medias
+	CONSTANT w4 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10);
 	CONSTANT h4 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10); 
 	SIGNAL xpix4, ypix4 : unsigned(9 DOWNTO 0);
 	SIGNAL rom_addr_s4 : std_logic_vector(19 DOWNTO 0);
 -------------------------------------------------------------------------------------	
+
+--------------------------- sprite 5 -----------------------------
+SIGNAL spriteon5 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	CONSTANT w5 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10);
+	CONSTANT h5 : unsigned(9 DOWNTO 0) := to_unsigned(34, 10); 
+	SIGNAL xpix5, ypix5 : unsigned(9 DOWNTO 0);
+	SIGNAL rom_addr_s5 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+--------------------------- sprite 6 -----------------------------
+SIGNAL spriteon6 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	CONSTANT w6 : unsigned(9 DOWNTO 0) := to_unsigned(24, 10);
+	CONSTANT h6 : unsigned(9 DOWNTO 0) := to_unsigned(24, 10); 
+	SIGNAL xpix6, ypix6 : unsigned(9 DOWNTO 0);
+	SIGNAL rom_addr_s6 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+--------------------------- sprite 7 -----------------------------
+SIGNAL spriteon7 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	CONSTANT w7 : unsigned(9 DOWNTO 0) := to_unsigned(15, 10);
+	CONSTANT h7 : unsigned(9 DOWNTO 0) := to_unsigned(20, 10); 
+	SIGNAL xpix7, ypix7 : unsigned(9 DOWNTO 0);
+	SIGNAL rom_addr_s7 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+
+--------------------------- sprite 8 -----------------------------
+--SIGNAL spriteon8 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	--CONSTANT w8 : unsigned(9 DOWNTO 0) := to_unsigned(xx, 10);
+	--CONSTANT h8 : unsigned(9 DOWNTO 0) := to_unsigned(xx, 10); 
+	--SIGNAL xpix8, ypix8 : unsigned(9 DOWNTO 0);
+	--SIGNAL rom_addr_s8 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+
+--------------------------- sprite 9 -----------------------------
+--SIGNAL spriteon9 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	--CONSTANT w9 : unsigned(9 DOWNTO 0) := to_unsigned(230, 10);
+	--CONSTANT h9 : unsigned(9 DOWNTO 0) := to_unsigned(175, 10); 
+	--SIGNAL xpix9, ypix9 : unsigned(9 DOWNTO 0);
+	--SIGNAL rom_addr_s9 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+
+--------------------------- sprite 10 -----------------------------
+--SIGNAL spriteon10 : STD_LOGIC;
+--TAMANHO AQUI
+    -- W =LARGURA Do sprite
+	-- H = ALTURA Do sprite
+	--CONSTANT w10 : unsigned(9 DOWNTO 0) := to_unsigned(230, 10);
+	--CONSTANT h10 : unsigned(9 DOWNTO 0) := to_unsigned(175, 10); 
+	--SIGNAL xpix10, ypix10 : unsigned(9 DOWNTO 0);
+	--SIGNAL rom_addr_s10 : std_logic_vector(19 DOWNTO 0);
+-------------------------------------------------------------------
+
+
 
 BEGIN
 --------------------------- sprite 1 ---------------------------------------------------------
@@ -116,7 +212,7 @@ spriteon3 <= '1' WHEN (unsigned(hc) >= C3 + hbp AND unsigned(hc) < C3 + hbp + w3
                ELSE '0';
   ----------------------------------------------------------------------------------------------      
   
- --------------------------- sprite 4 ----------------------------------------------------------
+ --------------------------- sprite 4 --------------------------------------------------------
 xpix4 <= unsigned(hc) - (hbp + C4);
 ypix4 <= unsigned(vc) - (vbp + R4);
 rom_addr_s4 <= std_logic_vector((ypix4*w4) + xpix4);
@@ -126,10 +222,82 @@ rom_addr4 <= rom_addr_s4(10 downto 0); --TAMANHO AQUI
 spriteon4 <= '1' WHEN (unsigned(hc) >= C4 + hbp AND unsigned(hc) < C4 + hbp + w4 AND
 	            unsigned(vc) >= R4 + vbp AND unsigned(vc) < R4 + vbp + h4)
                ELSE '0';
- ----------------------------------------------------------------------------------------------          
+ ---------------------------------------------------------------------------------------------- 
+ 
+  --------------------------- sprite 5 --------------------------------------------------------
+xpix5 <= unsigned(hc) - (hbp + C5);
+ypix5 <= unsigned(vc) - (vbp + R5);
+rom_addr_s5 <= std_logic_vector((ypix5*w5) + xpix5);
+
+rom_addr5 <= rom_addr_s5(10 downto 0); --TAMANHO AQUI
+
+spriteon5 <= '1' WHEN (unsigned(hc) >= C5 + hbp AND unsigned(hc) < C5 + hbp + w5 AND
+	            unsigned(vc) >= R5 + vbp AND unsigned(vc) < R5 + vbp + h5)
+               ELSE '0';
+ ----------------------------------------------------------------------------------------------  
+  --------------------------- sprite 6 --------------------------------------------------------
+xpix6 <= unsigned(hc) - (hbp + C6);
+ypix6 <= unsigned(vc) - (vbp + R6);
+rom_addr_s6 <= std_logic_vector((ypix6*w6) + xpix6);
+
+rom_addr6 <= rom_addr_s6(9 downto 0); --TAMANHO AQUI
+
+spriteon6 <= '1' WHEN (unsigned(hc) >= C6 + hbp AND unsigned(hc) < C6 + hbp + w6 AND
+	            unsigned(vc) >= R6 + vbp AND unsigned(vc) < R6 + vbp + h6)
+               ELSE '0';
+ ----------------------------------------------------------------------------------------------   
+  --------------------------- sprite 7 --------------------------------------------------------
+xpix7 <= unsigned(hc) - (hbp + C7);
+ypix7 <= unsigned(vc) - (vbp + R7);
+rom_addr_s7 <= std_logic_vector((ypix7*w7) + xpix7);
+
+rom_addr7 <= rom_addr_s7(8 downto 0); --TAMANHO AQUI
+
+spriteon7 <= '1' WHEN (unsigned(hc) >= C7 + hbp AND unsigned(hc) < C7 + hbp + w7 AND
+	            unsigned(vc) >= R7 + vbp AND unsigned(vc) < R7 + vbp + h7)
+               ELSE '0';
+ ----------------------------------------------------------------------------------------------
+ --------------------------- sprite 8 --------------------------------------------------------
+--xpix8 <= unsigned(hc) - (hbp + C8);
+--ypix8 <= unsigned(vc) - (vbp + R8);
+--rom_addr_s8 <= std_logic_vector((ypix8*w8) + xpix8);
+
+--rom_addr8 <= rom_addr_s8(18 downto 0); --TAMANHO AQUI
+
+--spriteon8 <= '1' WHEN (unsigned(hc) >= C8 + hbp AND unsigned(hc) < C8 + hbp + w8 AND
+	            --unsigned(vc) >= R8 + vbp AND unsigned(vc) < R8 + vbp + h8)
+               --ELSE '0';
+ ----------------------------------------------------------------------------------------------
+ 
+ --------------------------- sprite 9 --------------------------------------------------------
+--xpix9 <= unsigned(hc) - (hbp + C9);
+--ypix9 <= unsigned(vc) - (vbp + R9);
+--rom_addr_s9 <= std_logic_vector((ypix9*w9) + xpix9);
+
+--rom_addr9 <= rom_addr_s9(15 downto 0); --TAMANHO AQUI
+
+--spriteon9 <= '1' WHEN (unsigned(hc) >= C9 + hbp AND unsigned(hc) < C9 + hbp + w9 AND
+	            --unsigned(vc) >= R9 + vbp AND unsigned(vc) < R9 + vbp + h9)
+               --ELSE '0';
+ ----------------------------------------------------------------------------------------------
+
+ --------------------------- sprite 10 --------------------------------------------------------
+--xpix10 <= unsigned(hc) - (hbp + C10);
+--ypix10 <= unsigned(vc) - (vbp + R10);
+--rom_addr_s10 <= std_logic_vector((ypix10*w10) + xpix10);
+
+--rom_addr10 <= rom_addr_s10(15 downto 0); --TAMANHO AQUI
+
+--spriteon10 <= '1' WHEN (unsigned(hc) >= C10 + hbp AND unsigned(hc) < C10 + hbp + w10 AND
+	            --unsigned(vc) >= R10 + vbp AND unsigned(vc) < R10 + vbp + h10)
+               --ELSE '0';
+ ----------------------------------------------------------------------------------------------
+ 
+       
                
 -------------------------------------------ESCOLHE O BOM VETOR-----------------------------------------------------
-	PROCESS (spriteon1,spriteon2,spriteon3,spriteon4, vidon, IMG1,IMG2,IMG3, IMG4)
+-- spriteon9,IMG9,,spriteon10,,IMG10
+	PROCESS (spriteon1,spriteon2,spriteon3,spriteon4,spriteon5,spriteon6,spriteon7,vidon, IMG1,IMG2,IMG3,IMG4,IMG5,IMG6,IMG7)
 	BEGIN
 		vgaRed <= (OTHERS => '0');
 		vgaGreen <= (OTHERS => '0');
@@ -156,6 +324,31 @@ spriteon4 <= '1' WHEN (unsigned(hc) >= C4 + hbp AND unsigned(hc) < C4 + hbp + w4
 			vgaRed <= IMG4 (11 DOWNTO 8);
 			vgaGreen <=IMG4 (7 DOWNTO 4);
 			vgaBlue <= IMG4 (3 DOWNTO 0);
+        --sprite 5 -newimage
+		ELSIF vidon = '1' AND spriteon5 = '1' THEN
+			vgaRed <= IMG5 (11 DOWNTO 8);
+			vgaGreen <=IMG5 (7 DOWNTO 4);
+			vgaBlue <= IMG5 (3 DOWNTO 0);
+        --sprite 6 -newimage
+		ELSIF vidon = '1' AND spriteon6 = '1' THEN
+			vgaRed <= IMG6 (11 DOWNTO 8);
+			vgaGreen <=IMG6 (7 DOWNTO 4);
+			vgaBlue <= IMG6 (3 DOWNTO 0);
+        --sprite 7 -newimage
+		ELSIF vidon = '1' AND spriteon7 = '1' THEN
+			vgaRed <= IMG7 (11 DOWNTO 8);
+			vgaGreen <=IMG7 (7 DOWNTO 4);
+			vgaBlue <= IMG7 (3 DOWNTO 0);
+        --sprite 9 -newimage
+		--ELSIF vidon = '1' AND spriteon9 = '1' THEN
+			--vgaRed <= IMG9 (11 DOWNTO 8);
+			--vgaGreen <=IMG9 (7 DOWNTO 4);
+			--vgaBlue <= IMG9 (3 DOWNTO 0);
+        --sprite 10 -newimage
+		--ELSIF vidon = '1' AND spriteon10 = '1' THEN
+			--vgaRed <= IMG10 (11 DOWNTO 8);
+			--vgaGreen <=IMG10 (7 DOWNTO 4);
+			--vgaBlue <= IMG10 (3 DOWNTO 0);													
 			--Muda a cor de fundo BACKGROUND
 		ELSIF vidon = '1' THEN
 		vgaRed <= BACKGROUND(11 downto 8) ;--(others =>'1');
