@@ -134,8 +134,8 @@ SIGNAL spriteon7 : STD_LOGIC;
 --TAMANHO AQUI
     -- W =LARGURA Do sprite
 	-- H = ALTURA Do sprite
-	CONSTANT w7 : unsigned(9 DOWNTO 0) := to_unsigned(15, 10);
-	CONSTANT h7 : unsigned(9 DOWNTO 0) := to_unsigned(20, 10); 
+	CONSTANT w7 : unsigned(9 DOWNTO 0) := to_unsigned(20, 10);
+	CONSTANT h7 : unsigned(9 DOWNTO 0) := to_unsigned(15, 10); 
 	SIGNAL xpix7, ypix7 : unsigned(9 DOWNTO 0);
 	SIGNAL rom_addr_s7 : std_logic_vector(19 DOWNTO 0);
 -------------------------------------------------------------------
