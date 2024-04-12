@@ -303,22 +303,16 @@ spriteon7 <= '1' WHEN (unsigned(hc) >= C7 + hbp AND unsigned(hc) < C7 + hbp + w7
 		vgaGreen <= (OTHERS => '0');
 		vgaBlue <= (OTHERS => '0');
 		--Se o spriteon estiver ativo é para mostrar a cruzinha definida no M pelo ROM
-		--Imprime o sprite 1 se estiver dentro da tela
-		IF vidon = '1' AND spriteon1 = '1' THEN
-			vgaRed <= IMG1 (11 DOWNTO 8);
-			vgaGreen <=IMG1 (7 DOWNTO 4);
-			vgaBlue <= IMG1 (3 DOWNTO 0);
+		--Imprime o sprite 3 se estiver dentro da tela
+		IF vidon = '1' AND spriteon3 = '1' THEN
+			vgaRed <= IMG3 (11 DOWNTO 8);
+			vgaGreen <=IMG3 (7 DOWNTO 4);
+			vgaBlue <= IMG3 (3 DOWNTO 0);
 		--Imprime o sprite 2 se estiver dentro da tela
 		ELSIF vidon = '1' AND spriteon2 = '1' THEN
 			vgaRed <= IMG2 (11 DOWNTO 8);
 			vgaGreen <=IMG2 (7 DOWNTO 4);
 			vgaBlue <= IMG2 (3 DOWNTO 0);
-	   --Imprime o sprite 3 se estiver dentro da tela
-		ELSIF vidon = '1' AND spriteon3 = '1' THEN
-			vgaRed <= IMG3 (11 DOWNTO 8);
-			vgaGreen <=IMG3 (7 DOWNTO 4);
-			vgaBlue <= IMG3 (3 DOWNTO 0);
-			
         --Imprime o sprite 4 se estiver dentro da tela
 		ELSIF vidon = '1' AND spriteon4 = '1' THEN
 			vgaRed <= IMG4 (11 DOWNTO 8);
@@ -339,6 +333,11 @@ spriteon7 <= '1' WHEN (unsigned(hc) >= C7 + hbp AND unsigned(hc) < C7 + hbp + w7
 			vgaRed <= IMG7 (11 DOWNTO 8);
 			vgaGreen <=IMG7 (7 DOWNTO 4);
 			vgaBlue <= IMG7 (3 DOWNTO 0);
+			--Imprime o sprite 1 se estiver dentro da tela
+		ELSIF vidon = '1' AND spriteon1 = '1' THEN
+			vgaRed <= IMG1 (11 DOWNTO 8);
+			vgaGreen <=IMG1 (7 DOWNTO 4);
+			vgaBlue <= IMG1 (3 DOWNTO 0);
         --sprite 9 -newimage
 		--ELSIF vidon = '1' AND spriteon9 = '1' THEN
 			--vgaRed <= IMG9 (11 DOWNTO 8);

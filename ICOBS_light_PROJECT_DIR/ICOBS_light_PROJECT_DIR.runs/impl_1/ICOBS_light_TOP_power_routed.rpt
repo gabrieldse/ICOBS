@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Thu Apr 11 19:56:39 2024
+| Date             : Fri Apr 12 16:41:37 2024
 | Host             : DESKTOP-PDOT4RD running 64-bit major release  (build 9200)
 | Command          : report_power -file ICOBS_light_TOP_power_routed.rpt -pb ICOBS_light_TOP_power_summary_routed.pb -rpx ICOBS_light_TOP_power_routed.rpx
 | Design           : ICOBS_light_TOP
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.002 |        7 |       --- |             --- |
-| Slice Logic              |     0.006 |     8728 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     4664 |     20800 |           22.42 |
+| Slice Logic              |     0.006 |     8730 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     4665 |     20800 |           22.43 |
 |   CARRY4                 |    <0.001 |      298 |      8150 |            3.66 |
-|   Register               |    <0.001 |     2555 |     41600 |            6.14 |
+|   Register               |    <0.001 |     2557 |     41600 |            6.15 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
 |   LUT as Distributed RAM |    <0.001 |       44 |      9600 |            0.46 |
 |   F7/F8 Muxes            |    <0.001 |       39 |     32600 |            0.12 |
 |   Others                 |     0.000 |      199 |       --- |             --- |
-| Signals                  |     0.007 |     8142 |       --- |             --- |
+| Signals                  |     0.007 |     8141 |       --- |             --- |
 | Block RAM                |     0.015 |     42.5 |        50 |           85.00 |
 | MMCM                     |     0.059 |        1 |         5 |           20.00 |
 | DSPs                     |    <0.001 |        8 |        90 |            8.89 |
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.039 |       0.029 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.040 |       0.029 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.046 |       0.033 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -153,7 +153,7 @@ Table of Contents
 |   GPIOA                |     0.005 |
 |   GPIOB                |     0.005 |
 |   GPIOC                |     0.001 |
-|   MCU                  |     0.088 |
+|   MCU                  |     0.089 |
 |     IBEX               |     0.012 |
 |       IBEX_VER_1       |     0.012 |
 |     periphs            |     0.076 |
